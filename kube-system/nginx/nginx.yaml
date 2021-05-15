@@ -24,13 +24,13 @@ spec:
       service:
         loadBalancerIP: 192.168.128.160
         externalTrafficPolicy: Local
-      metrics:
-        enabled: true
-        serviceMonitor:
-          enabled: true
-          namespace: kube-system
-        prometheusRule:
-          enabled: false
+#      metrics:
+#        enabled: true
+#        serviceMonitor:
+#          enabled: true
+#          namespace: kube-system
+#        prometheusRule:
+#          enabled: false
       tolerations:
       - key: "arm"
         operator: "Exists"
