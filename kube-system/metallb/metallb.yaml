@@ -22,14 +22,14 @@ spec:
           protocol: layer2
           addresses:
             - 192.168.128.160-192.168.128.179
-    prometheusRule:
-      enabled: true
-    prometheus:
-      enabled: true
-      serviceMonitor:
-        enabled: true
-      prometheusRule:
-        enabled: true
+#    prometheusRule:
+#      enabled: true
+#    prometheus:
+#      enabled: true
+#      serviceMonitor:
+#        enabled: true
+#      prometheusRule:
+#        enabled: true
     controller:
       image:
         registry: docker.io
