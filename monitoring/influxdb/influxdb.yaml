@@ -24,7 +24,7 @@ spec:
     persistence:
       enabled: true
       size: 50Gi
-      storageClass: monitoring
+      storageClass: nfs-client
     resources:
       requests:
         memory: 1000Mi
