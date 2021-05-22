@@ -20,7 +20,10 @@ spec:
     service:
       type: LoadBalancer
       loadBalancerIP: 192.168.128.169
-    adminPassword: "${SECRET_GRAFANA_PASSWORD}"
+    admin:
+      existingSecret: "cluster-secrets"
+      userKey: "SECRET_EMAIL"
+      passwordKey: "SECRET_GRAFANA_PASSWORD"
     deploymentStrategy:
       type: Recreate
     podAnnotations:
