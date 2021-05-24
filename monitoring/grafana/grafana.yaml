@@ -107,14 +107,14 @@ spec:
         datasources:
           - name: Prometheus
             type: prometheus
+            url: http://prometheus-operated:9090
             access: proxy
-            url: http://thanos-query-http:10902/
             isDefault: true
-          - name: influxdb
-            type: influxdb
-            access: proxy
-            url: http://influxdb:8086
-            database: telegraf
+#          - name: influxdb
+#            type: influxdb
+#            access: proxy
+#            url: http://influxdb:8086
+#            database: telegraf
 #          - name: home_assistant
 #            type: influxdb
 #            access: proxy
