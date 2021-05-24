@@ -105,6 +105,11 @@ spec:
       datasources.yaml:
         apiVersion: 1
         datasources:
+          - name: Prometheus
+            type: prometheus
+            access: proxy
+            url: http://thanos-query-http:10902/
+            isDefault: true
           - name: influxdb
             type: influxdb
             access: proxy
