@@ -60,33 +60,33 @@ spec:
       config:
         global:
           resolve_timeout: 5m
-        route:
-          # group_by: ['alertname', 'job']
-          # group_wait: 30s
-          # group_interval: 5m
-          # repeat_interval: 6h
-          # receiver: 'slack-notifications'
-          # receiver: 'pagerduty'
-          routes:
-            - match:
-                alertname: Watchdog
-              receiver: 'null'
+#        route:
+#          # group_by: ['alertname', 'job']
+#          # group_wait: 30s
+#          # group_interval: 5m
+#          # repeat_interval: 6h
+#          # receiver: 'slack-notifications'
+#          # receiver: 'pagerduty'
+#          routes:
+#            - match:
+#                alertname: Watchdog
+#              receiver: 'null'
 #            - receiver: 'pagerduty'
 #              match:
 #                severity: critical
 #              continue: true
 #            - receiver: 'slack-notifications'
-        inhibit_rules:
-        - source_match:
-            severity: 'critical'
-          target_match:
-            severity: 'warning'
-          # Apply inhibition if the alertname is the same.
-          equal: ['alertname', 'namespace']
-        templates: ["*.tmpl"]
-      templateFiles:
-        pagerduty-custom.tmpl: |-
-          {{- define "pagerduty.custom.description" -}}[{{ .Status | toUpper }}{{ if eq .Status "firing" }}:{{ .Alerts.Firing | len }}{{ end }}] {{ if ne .CommonAnnotations.summary ""}}{{ .CommonAnnotations.summary }} {{ else if ne .CommonAnnotations.message ""}}{{ .CommonAnnotations.message }} {{ else if ne .CommonAnnotations.description ""}}{{ .CommonAnnotations.description }} {{ else }}{{ .CommonLabels.alertname }}{{ end }}{{- end -}}
+#        inhibit_rules:
+#        - source_match:
+#            severity: 'critical'
+#          target_match:
+#            severity: 'warning'
+#          # Apply inhibition if the alertname is the same.
+#          equal: ['alertname', 'namespace']
+#        templates: ["*.tmpl"]
+#      templateFiles:
+#        pagerduty-custom.tmpl: |-
+#          {{- define "pagerduty.custom.description" -}}[{{ .Status | toUpper }}{{ if eq .Status "firing" }}:{{ .Alerts.Firing | len }}{{ end }}] {{ if ne .CommonAnnotations.summary ""}}{{ .CommonAnnotations.summary }} {{ else if ne .CommonAnnotations.message ""}}{{ .CommonAnnotations.message }} {{ else if ne .CommonAnnotations.description ""}}{{ .CommonAnnotations.description }} {{ else }}{{ .CommonLabels.alertname }}{{ end }}{{- end -}}
     nodeExporter:
       serviceMonitor:
         relabelings:
