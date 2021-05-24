@@ -95,6 +95,14 @@ spec:
           action: replace
     grafana:
       enabled: false
+    kubelet:
+      enabled: true
+      serviceMonitor:
+        metricRelabelings:
+          - action: replace
+            sourceLabels:
+              - node
+            targetLabel: instance
     kubeEtcd:
       enabled: false
     kubeControllerManager:
@@ -145,9 +153,3 @@ spec:
               resources:
                 requests:
                   storage: 10Gi
-        thanos:
-          image: quay.io/thanos/thanos:v0.17.0
-          version: v0.17.0
-          objectStorageConfig:
-            name: thanos
-            key: object-store.yaml
