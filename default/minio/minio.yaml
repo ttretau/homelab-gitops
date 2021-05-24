@@ -54,12 +54,12 @@ spec:
       enabled: true
       # Number of parallel instances
       replicas: 1
-#  valuesFrom:
-#    - kind: Secret
-#      name: default-secrets
-#      valuesKey: SECRET_MINIO_ACCESS_KEY
-#      targetPath: accessKey
-#    - kind: Secret
-#      name: default-secrets
-#      valuesKey: SECRET_MINIO_SECRET_KEY
-#      targetPath: secretKey
+  valuesFrom:
+    - kind: Secret
+      name: default-secrets
+      valuesKey: SECRET_MINIO_ACCESS_KEY
+      targetPath: accessKey
+    - kind: Secret
+      name: default-secrets
+      valuesKey: SECRET_MINIO_SECRET_KEY
+      targetPath: secretKey
