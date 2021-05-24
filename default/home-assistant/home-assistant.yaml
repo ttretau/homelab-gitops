@@ -52,7 +52,7 @@ spec:
     persistence:
       config:
         enabled: true
-        storageClass: "nfs"
+        storageClass: "nfs-storage-class"
         accessMode: ReadWriteOnce
         size: "10Gi"
     addons:
