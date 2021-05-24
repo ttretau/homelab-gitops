@@ -55,10 +55,10 @@ spec:
         part_size: 0
   valuesFrom:
     - kind: Secret
-      name: default-secrets
+      name: monitoring-secrets
       valuesKey: SECRET_MINIO_ACCESS_KEY
       targetPath: objstore.config.access_key
     - kind: Secret
-      name: default-secrets
+      name: monitoring-secrets
       valuesKey: SECRET_MINIO_SECRET_KEY
       targetPath: objstore.config.secret_key
