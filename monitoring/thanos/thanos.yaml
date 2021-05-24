@@ -36,7 +36,7 @@ spec:
 #          tls:
 #            - hosts: ["thanos.eviljungle.com"]
     compact:
-      retentionResolution1h: 5y
+      retentionResolution1h: 2y
     objstore:
       type: S3
       config:
