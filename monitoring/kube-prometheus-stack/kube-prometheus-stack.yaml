@@ -107,22 +107,10 @@ spec:
       enabled: false
     kubeControllerManager:
       enabled: false
-      # endpoints:
-      # - 10.2.0.30
     kubeScheduler:
       enabled: false
-      # endpoints:
-      # - 10.2.0.30
     kubeProxy:
       enabled: false
-    prometheus-node-exporter:
-      tolerations:
-      - key: "arm"
-        operator: "Exists"
-      - key: "armhf"
-        operator: "Exists"
-      - key: "node-role.kubernetes.io/master"
-        operator: "Exists"
     prometheus:
       ingress:
         enabled: true
@@ -130,7 +118,7 @@ spec:
         annotations:
           kubernetes.io/ingress.class: "nginx"
       prometheusSpec:
-        replicas: 2
+        replicas: 1
         replicaExternalLabelName: "replica"
         ruleSelector: {}
         ruleNamespaceSelector: {}
