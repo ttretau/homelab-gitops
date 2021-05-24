@@ -1,0 +1,103 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: home-assistant
+  namespace: default
+spec:
+  interval: 5m
+  chart:
+    spec:
+      # renovate: registryUrl=https://k8s-at-home.com/charts/
+      chart: home-assistant
+      version: 8.3.0
+      sourceRef:
+        kind: HelmRepository
+        name: k8s-at-home-charts
+        namespace: flux-system
+      interval: 5m
+  values:
+    image:
+      repository: homeassistant/home-assistant
+      tag: 2021.5.5
+    env:
+      TZ: "Europe/Berlin"
+    hostNetwork: true
+    dnsPolicy: ClusterFirstWithHostNet
+    service:
+      type: LoadBalancer
+      loadBalancerIP: 192.168.128.170
+    ingress:
+      enabled: true
+      annotations:
+        kubernetes.io/ingress.class: "nginx"
+#      hosts:
+#      - host: hass.eviljungle.com
+#        paths:
+#        - path: /
+#          pathType: Prefix
+#      tls:
+#      - hosts:
+#        - "hass.eviljungle.com"
+    prometheus:
+      serviceMonitor:
+        enabled: false
+    probes:
+      liveness:
+        enabled: false
+      readiness:
+        enabled: false
+      startup:
+        enabled: true
+    persistence:
+      config:
+        enabled: true
+        storageClass: "nfs"
+        accessMode: ReadWriteOnce
+        size: "10Gi"
+    addons:
+      codeserver:
+        enabled: true
+        image:
+          repository: codercom/code-server
+          tag: 3.10.2
+        workingDir: "/config"
+        args:
+          - --user-data-dir
+          - "/config/.vscode"
+          - --auth
+          - "none"
+        ingress:
+          enabled: true
+          annotations:
+            kubernetes.io/ingress.class: "nginx"
+#            nginx.ingress.kubernetes.io/auth-url: "https://auth.eviljungle.com/oauth2/auth"
+#            nginx.ingress.kubernetes.io/auth-signin: https://auth.eviljungle.com/oauth2/start
+#          hosts:
+#          - host: hass-vscode.eviljungle.com
+#            paths:
+#            - path: /
+#              pathType: Prefix
+#          tls:
+#          - hosts:
+#            - hass-vscode.eviljungle.com
+        volumeMounts:
+        - name: config
+          mountPath: /config
+    tolerations:
+    - key: "arm"
+      operator: "Exists"
+    resources:
+      limits:
+        memory: 2500Mi
+      requests:
+        cpu: 100m
+        memory: 1000Mi
+    influxdb:
+      enabled: true
+      persistence:
+        enabled: true
+  valuesFrom:
+  - kind: Secret
+    name: "default-secrets"
+    optional: false
