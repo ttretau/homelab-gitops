@@ -97,7 +97,7 @@ spec:
       enabled: true
       persistence:
         enabled: true
-  valuesFrom:
-  - kind: Secret
-    name: "default-secrets"
-    optional: false
+#  valuesFrom:
+#  - kind: Secret
+#    name: "default-secrets"
+#    optional: false
