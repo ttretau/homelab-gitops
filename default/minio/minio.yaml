@@ -53,7 +53,7 @@ spec:
     nasgateway:
       enabled: true
       # Number of parallel instances
-      replicas: 1
+      replicas: 2
   valuesFrom:
     - kind: Secret
       name: default-secrets
