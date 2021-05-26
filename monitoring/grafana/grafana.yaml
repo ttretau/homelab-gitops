@@ -37,10 +37,10 @@ spec:
       GF_DISABLE_SANITIZE_HTML: true
       GF_PANELS_DISABLE_SANITIZE_HTML: true
       GF_LOG_FILTERS: rendering:debug
-    ingress:
-      enabled: true
-      annotations:
-        kubernetes.io/ingress.class: "nginx"
+#    ingress:
+#      enabled: true
+#      annotations:
+#        kubernetes.io/ingress.class: "nginx"
 #      hosts: [grafana.eviljungle.com]
 #      tls:
 #        - hosts:
