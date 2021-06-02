@@ -106,12 +106,12 @@ spec:
         retention: 7d
         enableAdminAPI: true
         walCompression: true
-        storageSpec:
-          volumeClaimTemplate:
-            spec:
-              selector:
-                matchLabels:
-                  app.kubernetes.io/name: nfs-monitoring-pvc
-              resources:
-                requests:
-                  storage: 10Gi
+      storageSpec:
+        volumeClaimTemplate:
+          spec:
+            selector:
+              matchLabels:
+                app.kubernetes.io/name: nfs-monitoring-pvc
+            resources:
+              requests:
+                storage: 10Gi
