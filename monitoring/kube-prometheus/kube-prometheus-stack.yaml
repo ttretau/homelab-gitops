@@ -90,7 +90,7 @@ spec:
         enabled: true
         path: /
         hosts:
-          - host: prometheus-operated.homelab
+        - host: prometheus-operated.homelab
         annotations:
           kubernetes.io/ingress.class: "nginx"
       prometheusSpec:
