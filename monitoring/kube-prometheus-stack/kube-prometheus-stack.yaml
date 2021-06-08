@@ -47,7 +47,7 @@ spec:
             equal: ['alertname', 'namespace']
       ingress:
         enabled: true
-        path: /
+        pathType: Prefix
         hosts:
         - alertmanager-operated.homelab
         annotations:
@@ -94,7 +94,7 @@ spec:
     prometheus:
       ingress:
         enabled: true
-        path: /
+        pathType: Prefix
         hosts:
         - prometheus-operated.homelab
         annotations:
