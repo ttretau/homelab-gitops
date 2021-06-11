@@ -56,9 +56,7 @@ spec:
         storage:
           volumeClaimTemplate:
             spec:
-              selector:
-                matchLabels:
-                  app.kubernetes.io/name: nfs-monitoring-pvc
+              storageClassName: nfs-storage-class
               resources:
                 requests:
                   storage: 10Gi
@@ -117,9 +115,7 @@ spec:
         storageSpec:
           volumeClaimTemplate:
             spec:
-              selector:
-                matchLabels:
-                  app.kubernetes.io/name: nfs-monitoring-pvc
+              storageClassName: nfs-storage-class
               resources:
                 requests:
                   storage: 10Gi
