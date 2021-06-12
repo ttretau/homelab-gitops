@@ -6,7 +6,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m0s
-  path: ./default
+  path: ./flux-system
   prune: false
   sourceRef:
     kind: GitRepository
@@ -19,4 +19,4 @@ spec:
     substitute: {}
     substituteFrom:
       - kind: Secret
-        name: default-secrets
+        name: cluster-secrets
