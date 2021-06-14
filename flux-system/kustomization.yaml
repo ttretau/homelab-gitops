@@ -4,4 +4,4 @@ resources:
 - gotk-components.yaml
 - gotk-sync.yaml
 #- sops.yaml
-#- cluster-secrets.enc.yaml
+- cluster-secrets.enc.yaml
