@@ -3,5 +3,5 @@ kind: StorageClass
 metadata:
   name: nfs-storage-class
   annotations:
-    storageclass.kubernetes.io/is-default-class: "true"
+    storageclass.kubernetes.io/is-default-class: "false"
 provisioner: nfs-external-provisioner
