@@ -115,7 +115,9 @@ spec:
         storageSpec:
           volumeClaimTemplate:
             spec:
-              storageClassName: nfs
+              selector:
+                matchLabels:
+                  app.kubernetes.io/name: nfs-prometheus-pv
               resources:
                 requests:
-                  storage: 1Gi
+                  storage: 8Gi
