@@ -59,7 +59,7 @@ spec:
               storageClassName: nfs-monitoring-pvc
               resources:
                 requests:
-                  storage: 10Gi
+                  storage: 1Gi
     nodeExporter:
       serviceMonitor:
         relabelings:
@@ -118,4 +118,4 @@ spec:
               storageClassName: nfs-monitoring-pvc
               resources:
                 requests:
-                  storage: 10Gi
+                  storage: 1Gi

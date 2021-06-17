@@ -1,8 +1,10 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: nfs-monitoring-pv
+  name: nfs-prometheus-pv
   namespace: monitoring
+  labels:
+    app: nfs-prometheus-pv
 spec:
   storageClassName: nfs
   capacity:
@@ -12,7 +14,7 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   nfs:
     server: 192.168.128.56
-    path: "/mnt/storage/monitoring"
+    path: "/mnt/storage/prometheus"
   mountOptions:
     - nfsvers=3
     - tcp
@@ -20,16 +22,3 @@ spec:
     - hard
     - noatime
     - nodiratime
----
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: nfs-monitoring-pvc
-  namespace: monitoring
-spec:
-  accessModes:
-    - ReadWriteMany
-  storageClassName: nfs-storage-class
-  resources:
-    requests:
-      storage: 1Mi
