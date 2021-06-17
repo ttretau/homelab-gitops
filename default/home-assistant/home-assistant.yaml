@@ -43,9 +43,9 @@ spec:
 #      tls:
 #      - hosts:
 #        - "hass.eviljungle.com"
-    prometheus:
-      serviceMonitor:
-        enabled: false
+#    prometheus:
+#      serviceMonitor:
+#        enabled: false
     probes:
       liveness:
         enabled: false
