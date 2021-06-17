@@ -93,10 +93,10 @@ spec:
       requests:
         cpu: 100m
         memory: 1000Mi
-    influxdb:
-      enabled: true
-      persistence:
-        enabled: true
+#    influxdb:
+#      enabled: false
+#      persistence:
+#        enabled: true
 #  valuesFrom:
 #  - kind: Secret
 #    name: "default-secrets"
