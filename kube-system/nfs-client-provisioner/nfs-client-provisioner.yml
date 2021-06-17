@@ -23,4 +23,4 @@ spec:
       server: "192.168.128.56"
       path: "/mnt/storage"
     storageClass:
-      defaultClass: true
+      defaultClass: false

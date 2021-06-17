@@ -4,7 +4,7 @@ metadata:
   name: nfs-monitoring-pv
   namespace: monitoring
 spec:
-  storageClassName: nfs
+  storageClassName: nfs-storage-class
   capacity:
     storage: 50Gi
   accessModes:
@@ -29,7 +29,7 @@ metadata:
 spec:
   accessModes:
     - ReadWriteMany
-  storageClassName: nfs
+  storageClassName: nfs-storage-class
   resources:
     requests:
       storage: 20Gi

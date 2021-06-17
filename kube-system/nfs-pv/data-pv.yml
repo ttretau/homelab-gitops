@@ -4,9 +4,9 @@ metadata:
   name: nfs-data-pv
   namespace: default
 spec:
-  storageClassName: nfs
+  storageClassName: nfs-storage-class
   capacity:
-    storage: 50Gi
+    storage: 1Gi
   accessModes:
     - ReadWriteMany
   persistentVolumeReclaimPolicy: Retain
@@ -29,7 +29,7 @@ metadata:
 spec:
   accessModes:
     - ReadWriteMany
-  storageClassName: nfs
+  storageClassName: nfs-storage-class
   resources:
     requests:
       storage: 1Gi
