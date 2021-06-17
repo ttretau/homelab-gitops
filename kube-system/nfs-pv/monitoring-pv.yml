@@ -6,7 +6,7 @@ metadata:
 spec:
   storageClassName: nfs
   capacity:
-    storage: 10Gi
+    storage: 50Gi
   accessModes:
     - ReadWriteMany
   persistentVolumeReclaimPolicy: Retain
@@ -32,4 +32,4 @@ spec:
   storageClassName: nfs
   resources:
     requests:
-      storage: 50Gi
+      storage: 10Gi
