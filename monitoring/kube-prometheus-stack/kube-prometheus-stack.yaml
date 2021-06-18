@@ -61,7 +61,7 @@ spec:
                   app.kubernetes.io/name: prometheus
               resources:
                 requests:
-                  storage: 10Gi
+                  storage: 1Gi
     nodeExporter:
       serviceMonitor:
         relabelings:
