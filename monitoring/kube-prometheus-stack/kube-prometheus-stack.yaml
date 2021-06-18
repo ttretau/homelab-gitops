@@ -60,9 +60,9 @@ spec:
               resources:
                 requests:
                   storage: 1Gi
-            selector:
-              matchLabels:
-                app: prometheus
+              selector:
+                matchLabels:
+                  app: prometheus
     nodeExporter:
       serviceMonitor:
         relabelings:
@@ -118,10 +118,10 @@ spec:
         storageSpec:
           volumeClaimTemplate:
             spec:
+              selector:
+                matchLabels:
+                  app: prometheus
               storageClassName: ""
               resources:
                 requests:
                   storage: 10Gi
-            selector:
-              matchLabels:
-                app: prometheus
