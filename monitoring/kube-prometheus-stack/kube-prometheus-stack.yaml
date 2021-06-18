@@ -53,15 +53,15 @@ spec:
         annotations:
           kubernetes.io/ingress.class: "nginx"
       alertmanagerSpec:
+        selector:
+          matchLabels:
+            app.kubernetes.io/name: prometheus
         storage:
           volumeClaimTemplate:
             spec:
               resources:
                 requests:
                   storage: 1Gi
-              selector:
-                matchLabels:
-                  app.kubernetes.io/name: prometheus
     nodeExporter:
       serviceMonitor:
         relabelings:
@@ -115,11 +115,11 @@ spec:
         enableAdminAPI: true
         walCompression: true
         storageSpec:
+          selector:
+            matchLabels:
+              app.kubernetes.io/name: prometheus
           volumeClaimTemplate:
             spec:
-              selector:
-                matchLabels:
-                  app.kubernetes.io/name: prometheus
               resources:
                 requests:
                   storage: 10Gi
