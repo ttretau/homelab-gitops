@@ -55,7 +55,7 @@ spec:
     persistence:
       config:
         enabled: true
-        existingClaim: home-assistant-config-v1
+        existingClaim: nfs-data-pvc
     addons:
       codeserver:
         enabled: true
