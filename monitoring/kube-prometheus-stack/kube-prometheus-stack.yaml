@@ -56,7 +56,6 @@ spec:
         storage:
           volumeClaimTemplate:
             spec:
-              storageClassName: ""
               resources:
                 requests:
                   storage: 1Gi
@@ -121,7 +120,6 @@ spec:
               selector:
                 matchLabels:
                   app: prometheus
-              storageClassName: ""
               resources:
                 requests:
                   storage: 10Gi
