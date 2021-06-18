@@ -61,7 +61,7 @@ spec:
                   storage: 1Gi
               selector:
                 matchLabels:
-                  app: prometheus
+                  app.kubernetes.io/name: prometheus
     nodeExporter:
       serviceMonitor:
         relabelings:
@@ -119,7 +119,7 @@ spec:
             spec:
               selector:
                 matchLabels:
-                  app: prometheus
+                  app.kubernetes.io/name: prometheus
               resources:
                 requests:
                   storage: 10Gi
