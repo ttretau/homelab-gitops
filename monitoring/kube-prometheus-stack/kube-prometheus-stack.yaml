@@ -56,10 +56,12 @@ spec:
         storage:
           volumeClaimTemplate:
             spec:
-              storageClassName: nfs-storage-class
+              selector:
+                matchLabels:
+                  app.kubernetes.io/name: prometheus
               resources:
                 requests:
-                  storage: 1Gi
+                  storage: 10Gi
     nodeExporter:
       serviceMonitor:
         relabelings:
@@ -115,4 +117,9 @@ spec:
         storageSpec:
           volumeClaimTemplate:
             spec:
-              storageClassName: nfs-storage-class
+              selector:
+                matchLabels:
+                  app.kubernetes.io/name: prometheus
+              resources:
+                requests:
+                  storage: 10Gi
