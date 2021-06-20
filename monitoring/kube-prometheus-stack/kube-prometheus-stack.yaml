@@ -55,7 +55,7 @@ spec:
       alertmanagerSpec:
         selector:
           matchLabels:
-            app.kubernetes.io/name: prometheus
+            app: prometheus
         storage:
           volumeClaimTemplate:
             spec:
@@ -117,7 +117,7 @@ spec:
         storageSpec:
           selector:
             matchLabels:
-              app.kubernetes.io/name: prometheus
+              app: prometheus
           volumeClaimTemplate:
             spec:
               resources:
