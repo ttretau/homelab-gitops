@@ -59,6 +59,7 @@ spec:
               selector:
                 matchLabels:
                   storage-tier: nfs-prometheus
+              storageClassName: nfs-storage-class
               resources:
                 requests:
                   storage: 1Gi
@@ -119,7 +120,8 @@ spec:
             spec:
               selector:
                 matchLabels:
-                  storage-tier: nfs-prometheus           
+                  storage-tier: nfs-prometheus
+              storageClassName: nfs-storage-class           
               resources:
                 requests:
                   storage: 10Gi
