@@ -53,12 +53,12 @@ spec:
         annotations:
           kubernetes.io/ingress.class: "nginx"
       alertmanagerSpec:
-        selector:
-          matchLabels:
-            storage-tier: nfs-prometheus
         storage:
           volumeClaimTemplate:
             spec:
+              selector:
+                matchLabels:
+                  storage-tier: nfs-prometheus
               resources:
                 requests:
                   storage: 1Gi
@@ -115,11 +115,11 @@ spec:
         enableAdminAPI: true
         walCompression: true
         storageSpec:
-          selector:
-            matchLabels:
-              storage-tier: nfs-prometheus
           volumeClaimTemplate:
             spec:
+              selector:
+                matchLabels:
+                  storage-tier: nfs-prometheus           
               resources:
                 requests:
                   storage: 10Gi
