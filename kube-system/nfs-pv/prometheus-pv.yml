@@ -4,7 +4,7 @@ metadata:
   name: prometheus-pv
   namespace: monitoring
   labels:
-    app: prometheus
+    storage-tier: nfs-prometheus
 spec:
   storageClassName: nfs-storage-class
   capacity:
