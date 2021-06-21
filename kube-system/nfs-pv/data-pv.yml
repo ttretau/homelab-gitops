@@ -4,7 +4,7 @@ metadata:
   name: nfs-data-pv
   namespace: default
 spec:
-  storageClassName: nfs-storage-class
+  storageClassName: nfs-client
   capacity:
     storage: 10Gi
   accessModes:
@@ -29,7 +29,7 @@ metadata:
 spec:
   accessModes:
     - ReadWriteMany
-  storageClassName: nfs-storage-class
+  storageClassName: nfs-client
   resources:
     requests:
       storage: 1Gi
