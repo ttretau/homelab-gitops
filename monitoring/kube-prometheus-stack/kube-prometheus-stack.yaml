@@ -56,9 +56,6 @@ spec:
         storage:
           volumeClaimTemplate:
             spec:
-              selector:
-                matchLabels:
-                  storage-tier: nfs-prometheus
               storageClassName: nfs-storage-class
               resources:
                 requests:
@@ -118,10 +115,7 @@ spec:
         storageSpec:
           volumeClaimTemplate:
             spec:
-              selector:
-                matchLabels:
-                  storage-tier: nfs-prometheus
-              storageClassName: nfs-storage-class           
+              storageClassName: nfs-storage-class
               resources:
                 requests:
                   storage: 10Gi
