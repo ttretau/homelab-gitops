@@ -117,8 +117,6 @@ spec:
         walCompression: true
         storageSpec:
           volumeClaimTemplate:
-            metadata:
-              nfs.io/storage-path: "prometheus-storage"
             spec:
               selector:
                 matchLabels:
