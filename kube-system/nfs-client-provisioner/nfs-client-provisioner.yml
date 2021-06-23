@@ -24,4 +24,3 @@ spec:
       path: "/mnt/storage"
     storageClass:
       defaultClass: false
-      pathPattern: "${.PVC.namespace}-${.PVC.name}"
