@@ -54,7 +54,7 @@ spec:
           - "nc.rulle.tretau.dev"
     persistence:
       enabled: true
-      storageClass: nfs
+      storageClass: nfs-client
       mariadb:
         enabled: true
         master:
@@ -63,7 +63,7 @@ spec:
         slave:
           replicas: 0
         global:
-          storageClass: nfs
+          storageClass: nfs-client
     metrics:
       enabled: false
 #       # resources:
