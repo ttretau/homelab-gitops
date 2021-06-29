@@ -66,6 +66,10 @@ spec:
           storageClass: nfs-client
     metrics:
       enabled: false
+    livenessProbe:
+      enabled: false
+    readinessProbe:
+      enabled: false
 #       # resources:
 #       #   limits:
 #       #     cpu: 11m
@@ -85,10 +89,6 @@ spec:
 #     #   requests:
 #     #     cpu: 23m
 #     #     memory: 283Mi
-#     # livenessProbe:
-#     #   enabled: false
-#     # readinessProbe:
-#     #   enabled: false
 #   valuesFrom:
 #     - secretKeyRef:
 #         name: nextcloud-helm-values
