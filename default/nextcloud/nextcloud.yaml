@@ -70,6 +70,9 @@ spec:
       enabled: false
     readinessProbe:
       enabled: false
+    service:
+      type: LoadBalancer
+      loadBalancerIP: 192.168.128.163
 #       # resources:
 #       #   limits:
 #       #     cpu: 11m
