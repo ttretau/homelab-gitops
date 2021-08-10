@@ -55,15 +55,6 @@ spec:
     persistence:
       enabled: true
       storageClass: nfs-client
-    mariadb:
-      enabled: true
-      master:
-        persistence:
-          enabled: true
-      slave:
-        replicas: 0
-      global:
-        storageClass: nfs-client
     metrics:
       enabled: false
     livenessProbe:
