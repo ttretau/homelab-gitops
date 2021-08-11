@@ -20,7 +20,8 @@ spec:
     image:
       repository: nextcloud
       tag: 20.0.11-apache
-    extraEnv:
+    nextcloud:
+      extraEnv:
       - name: NEXTCLOUD_TRUSTED_DOMAINS
         value: 192.168.128.163
     ingress:
