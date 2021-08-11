@@ -87,6 +87,3 @@ spec:
 #     #   requests:
 #     #     cpu: 23m
 #     #     memory: 283Mi
-#   valuesFrom:
-#     - secretKeyRef:
-#         name: nextcloud-helm-values
