@@ -22,6 +22,19 @@ spec:
       tag: 20.0.11-apache
     nextcloud:
       host: "192.168.128.163"
+      configs:
+        proxies.config.php: |-
+          <?php
+          $CONFIG = array (
+            'trusted_proxies' => ['192.168.0.0/16']
+          );
+      resources:
+        limits:
+          cpu: 23m
+          memory: 283Mi
+        requests:
+          cpu: 23m
+          memory: 283Mi
     ingress:
       enabled: true
       annotations:
@@ -66,22 +79,3 @@ spec:
     service:
       type: LoadBalancer
       loadBalancerIP: 192.168.128.163
-#       # resources:
-#       #   limits:
-#       #     cpu: 11m
-#       #     memory: 83Mi
-#       #   requests:
-#       #     cpu: 11m
-#       #     memory: 83Mi
-#     nextcloud:
-#       host: "nextcloud.${SECRET_DOMAIN}"
-#       username: admin
-#     internalDatabase:
-#       enabled: false
-#     # resources:
-#     #   limits:
-#     #     cpu: 23m
-#     #     memory: 283Mi
-#     #   requests:
-#     #     cpu: 23m
-#     #     memory: 283Mi
