@@ -6,5 +6,5 @@ metadata:
   namespace: flux-system
 spec:
   interval: 60m
-  url: https://github.com/zalando/postgres-operator/tree/master/charts
+  url: https://opensource.zalando.com/postgres-operator/charts/postgres-operator/
   timeout: 3m
