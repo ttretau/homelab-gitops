@@ -5,6 +5,8 @@ metadata:
   namespace: default
 spec:
   teamId: "nextcloud"
+  serviceAnnotations:
+    enableMasterLoadBalancer: true
   volume:
     size: 1Gi
   numberOfInstances: 1
