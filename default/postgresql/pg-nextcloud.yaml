@@ -8,6 +8,7 @@ spec:
   serviceAnnotations:
     enableMasterLoadBalancer: true
   volume:
+    storageClass: nfs-client
     size: 1Gi
   numberOfInstances: 1
   users:
