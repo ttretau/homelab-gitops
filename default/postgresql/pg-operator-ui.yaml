@@ -8,7 +8,7 @@ spec:
   interval: 5m
   chart:
     spec:
-      # renovate: registryUrl=https://opensource.zalando.com/postgres-operator/charts/postgres-operator/
+      # renovate: registryUrl=https://opensource.zalando.com/postgres-operator/charts/postgres-operator-ui/
       chart: postgres-operator-ui
       version: 1.6.3
       sourceRef:
