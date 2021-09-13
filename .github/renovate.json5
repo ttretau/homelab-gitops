@@ -3,7 +3,7 @@
   "timezone": "Europe/Berlin",
   "semanticCommits": "enabled",
   "dependencyDashboard": true,
-  "dependencyDashboardTitle": "Renovate Dashboard",
+  "dependencyDashboardTitle": "homelab Renovate Dashboard",
   "commitBody": "Signed-off-by: Torben Tretau <ttretau@users.noreply.github.com>",
   // Do not notify on closed unmerged PRs
   "suppressNotifications": ["prIgnoreNotification"],
