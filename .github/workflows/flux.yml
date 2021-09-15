@@ -23,10 +23,6 @@ jobs:
             --network-policy=false \
             --export > ./flux-system/gotk-components.yaml
           echo "::set-output name=flux_version::$VERSION"
-      - name: rm Flux components
-        id: clean
-        run: |
-          rm bin/flux
       - name: Create pull request for Flux update
         uses: peter-evans/create-pull-request@v3
         with:
