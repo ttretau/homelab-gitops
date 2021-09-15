@@ -31,7 +31,7 @@ spec:
       main:
         type: LoadBalancer
         externalIPs:
-          - "192.168.128.170"
+          - "192.168.128.161"
         externalTrafficPolicy: Local
     ingress:
       main:
