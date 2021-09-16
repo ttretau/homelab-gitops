@@ -1,0 +1,10 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta1
+kind: HelmRepository
+metadata:
+  name: camunda-zeebe-charts
+  namespace: flux-system
+spec:
+  interval: 90m
+  url: https://helm.camunda.io
+  timeout: 3m
