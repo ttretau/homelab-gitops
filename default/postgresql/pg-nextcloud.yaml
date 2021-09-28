@@ -9,7 +9,7 @@ spec:
     enableMasterLoadBalancer: true
   volume:
     storageClass: nfs-client
-    size: 1Gi
+    size: 2Gi
   numberOfInstances: 1
   users:
     nextcloud:  # database owner
