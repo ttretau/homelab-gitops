@@ -22,6 +22,17 @@ spec:
       tag: 22.1.1-apache
     nextcloud:
       host: "192.168.128.163"
+      externalDatabase:
+        enabled: true
+        type: postgresql
+        host: nextcloud-pg-cluster
+        user: nextcloud
+        database: nextcloud
+        existingSecret:
+          enabled: true
+          secretName: nextcloud-user.nextcloud-pg-cluster.credentials.postgresql.acid.zalan.do
+          usernameKey: username
+          usernamePassword: password
       configs:
         proxies.config.php: |-
           <?php
