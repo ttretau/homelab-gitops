@@ -1,0 +1,22 @@
+apiVersion: "acid.zalan.do/v1"
+kind: postgresql
+metadata:
+  name: homeassistant-pg-cluster
+  namespace: default
+spec:
+  teamId: "homeassistant"
+  volume:
+    storageClass: nfs-client
+    size: 2Gi
+  numberOfInstances: 1
+  users:
+    homeassistant:  # database owner
+    - superuser
+    - createdb
+    homeassistant_user: []  # role for application foo
+  databases:
+    nextcloud: homeassistant  # dbname: owner
+  preparedDatabases:
+    homeassistant: {}
+  postgresql:
+    version: "13"
