@@ -16,7 +16,5 @@ spec:
     nextcloud_user: []  # role for application foo
   databases:
     nextcloud: nextcloud  # dbname: owner
-  preparedDatabases:
-    nextcloud: {}
   postgresql:
     version: "13"
