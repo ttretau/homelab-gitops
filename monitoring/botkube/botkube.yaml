@@ -28,7 +28,7 @@ spec:
         clustername: k8s
       communications:
         slack:
-          enabled: false
+          enabled: true
           channel: 'notifications'
           token:
           notiftype: short

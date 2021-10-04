@@ -83,12 +83,6 @@ spec:
           tls:
             - hosts:
                 - "hass-config.homelab"
-        service:
-          main:
-            type: LoadBalancer
-            externalIPs:
-              - "192.168.128.162"
-            externalTrafficPolicy: Local
         volumeMounts:
           - name: config
             mountPath: /config
