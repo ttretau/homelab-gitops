@@ -25,7 +25,7 @@ spec:
       enabled: true
     config:
       settings:
-        clustername: k8s
+        clustername: jakku
       communications:
         slack:
           enabled: true
