@@ -3,5 +3,8 @@ kind: Kustomization
 resources:
 - gotk-components.yaml
 - gotk-sync.yaml
+- flux-slack-secret.enc.yaml
+- flux-slack.yaml
+- flux-alert.yaml
 #- sops.yaml
 #- cluster-secrets.enc.yaml
