@@ -27,11 +27,7 @@ spec:
       settings:
         clustername: jakku
       communications:
-        slack:
-          enabled: true
-          channel: 'notifications'
-          token:
-          notiftype: short
+        existingSecretName: "botkube-config-secret"
       resources:
         - name: v1/pods
           namespaces:
