@@ -17,8 +17,9 @@ spec:
         namespace: flux-system
       interval: 5m
   values:
-    clusterSize: 1
-    partitionCount: 1
-    replicationFactor: 1
-    kibana:
-      enabled: false
+    zeebe-cluster-helm:
+      clusterSize: 1
+      partitionCount: 1
+      replicationFactor: 1
+      kibana:
+        enabled: false
