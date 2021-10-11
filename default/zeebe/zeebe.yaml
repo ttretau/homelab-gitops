@@ -24,7 +24,7 @@ spec:
       kibana:
         enabled: false
       elasticsearch:
-        enabled: false
+        enabled: true
       gateway:
         replicas: 1
       resources:
