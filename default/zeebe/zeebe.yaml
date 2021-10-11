@@ -25,6 +25,7 @@ spec:
         enabled: false
       elasticsearch:
         enabled: true
+        replicas: 1
       gateway:
         replicas: 1
       resources:
