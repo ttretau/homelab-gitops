@@ -26,6 +26,13 @@ spec:
       elasticsearch:
         enabled: true
         replicas: 1
+        resources:
+          requests:
+            memory: 1000Mi
+            cpu: 100m
+          limits:
+            cpu: 500m
+            memory: 1500Mi
       gateway:
         replicas: 1
       resources:
