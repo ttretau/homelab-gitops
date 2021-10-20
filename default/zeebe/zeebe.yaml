@@ -10,7 +10,7 @@ spec:
     spec:
       # renovate: registryUrl=https://helm.camunda.io
       chart: zeebe-full-helm
-      version: 1.1.4
+      version: 1.1.5
       sourceRef:
         kind: HelmRepository
         name: camunda-zeebe-charts
