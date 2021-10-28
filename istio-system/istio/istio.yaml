@@ -8,6 +8,7 @@ spec:
   interval: 5m
   chart:
     spec:
+      # renovate: registryUrl=https://kubernetes-charts.banzaicloud.com
       chart: istio-operator
       version: 0.0.91
       sourceRef:
