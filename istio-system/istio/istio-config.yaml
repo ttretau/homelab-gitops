@@ -6,7 +6,6 @@ metadata:
   name: istio-sample-v110x
   namespace: istio-system
 spec:
-  namespace: istio-system
   version: "1.10.4"
   global: false
   meshPolicy:
