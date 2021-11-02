@@ -32,18 +32,18 @@ spec:
 #      prometheusRule:
 #        enabled: true
     controller:
-      image:
-        registry: docker.io
-        repository: metallb/controller
-        tag: v0.11.0
+      # image:
+      #   registry: docker.io
+      #   repository: metallb/controller
+      #   tag: v0.11.0
       tolerations:
       - key: "arm"
         operator: "Exists"
     speaker:
-      image:
-        registry: docker.io
-        repository: metallb/speaker
-        tag: v0.11.0
+      # image:
+      #   registry: docker.io
+      #   repository: metallb/speaker
+      #   tag: v0.11.0
       tolerations:
       - key: "arm"
         operator: "Exists"
