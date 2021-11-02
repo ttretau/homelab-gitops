@@ -21,7 +21,7 @@ spec:
       repository: nextcloud
       tag: 22.2.0-apache
     nextcloud:
-      host: "192.168.128.163"
+      host: "nc.rulle.tretau.dev"
       internalDatabase:
         enabled: false
       externalDatabase:
