@@ -31,7 +31,7 @@ spec:
       enabled: false
   pilot:
     enabled: true
-    image: "gcr.io/istio-release/pilot:1.10.4"
+    image: "gcr.io/istio-release/pilot:1.11.4"
     replicaCount: 1
     minReplicas: 1
     maxReplicas: 5
