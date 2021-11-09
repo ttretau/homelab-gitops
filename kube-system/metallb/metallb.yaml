@@ -31,7 +31,7 @@ spec:
 #        enabled: true
 #      prometheusRule:
 #        enabled: true
-    controller:
+#    controller: 
       # image:
       #   registry: docker.io
       #   repository: metallb/controller
