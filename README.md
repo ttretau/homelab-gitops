@@ -1,5 +1,20 @@
 # homelab-gitops
 
+K8s Homelab automation, running
+* Home Assistant
+* Nextcloud
+* ..
+
+Automation using:
+* Flux
+* Sops
+
+Based on a lot of stuff from:
+https://github.com/k8s-at-home/awesome-home-kubernetes
+
+#Documentation
+
+TBD
 
 ```
 export KEY_NAME="homelab.tretau.net"
