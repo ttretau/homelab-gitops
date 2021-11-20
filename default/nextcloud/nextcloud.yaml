@@ -22,6 +22,11 @@ spec:
       tag: 22.2.3-apache
     nextcloud:
       host: "nc.tretau.dev"
+      existingSecret:
+        enabled: true
+        secretName: nextcloud
+        usernameKey: NEXTCLOUD_ADMIN_USER
+        passwordKey: NEXTCLOUD_ADMIN_PASSWORD
       internalDatabase:
         enabled: false
       externalDatabase:
