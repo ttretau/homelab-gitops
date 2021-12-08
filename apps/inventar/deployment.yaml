@@ -1,0 +1,54 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: inventar
+  namespace: prod
+  labels:
+    app: inventar
+spec:
+  minReadySeconds: 5
+  revisionHistoryLimit: 5
+  progressDeadlineSeconds: 60
+  strategy:
+    rollingUpdate:
+      maxUnavailable: 0
+    type: RollingUpdate
+  selector:
+    matchLabels:
+      app: inventar
+  template:
+    metadata:
+      annotations:
+        prometheus.io/scrape: "true"
+      labels:
+        app: inventar
+    spec:
+      containers:
+      - name: inventar
+        image: docker.pkg.github.com/ttretau/inventar/inventory-app:v0.0.1
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8765
+          name: http
+          protocol: TCP
+        livenessProbe:
+          httpGet:
+            path: /hello
+            port: 8765
+          failureThreshold: 1
+          periodSeconds: 60
+        readinessProbe:
+          httpGet:
+            path: /hello
+            port: 8765
+          failureThreshold: 1
+          initialDelaySeconds: 120
+          periodSeconds: 60
+        resources:
+          limits:
+            cpu: 500m
+            memory: 512Mi
+          requests:
+            cpu: 10m
+            memory: 16Mi
