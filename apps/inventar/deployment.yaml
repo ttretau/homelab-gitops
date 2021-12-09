@@ -26,7 +26,7 @@ spec:
     spec:
       containers:
       - name: inventar
-        image: ghcr.io/ttretau/inventar/inventory-app:v0.0.2
+        image: ghcr.io/ttretau/inventar/inventory-app:v0.0.3
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8765
@@ -34,13 +34,13 @@ spec:
           protocol: TCP
         livenessProbe:
           httpGet:
-            path: /hello
+            path: /health
             port: 8765
           failureThreshold: 1
           periodSeconds: 60
         readinessProbe:
           httpGet:
-            path: /hello
+            path: /health
             port: 8765
           failureThreshold: 1
           initialDelaySeconds: 120
