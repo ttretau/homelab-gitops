@@ -12,8 +12,6 @@ spec:
   # the maximum time in seconds for the canary deployment
   # to make progress before it is rollback (default 600s)
   progressDeadlineSeconds: 120
-  hosts:
-  - inventar.homelab
   # HPA reference (optional)
   autoscalerRef:
     apiVersion: autoscaling/v2beta1
@@ -22,6 +20,8 @@ spec:
   service:
     # container port
     port: 8765
+    hosts:
+    - inventar.homelab
   # promote the canary without analysing it (default false)
   skipAnalysis: false
   analysis:
