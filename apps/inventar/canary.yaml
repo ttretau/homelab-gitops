@@ -33,11 +33,8 @@ spec:
     # canary increment step
     # percentage (0-100)
     stepWeight: 5
-    # Linkerd Prometheus checks
     metrics:
       - name: starlette_request_duration_seconds
-        # maximum req duration P99
-        # milliseconds
         thresholdRange:
-          max: 500
+          max: 15
         interval: 30s
