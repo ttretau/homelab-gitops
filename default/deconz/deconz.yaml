@@ -28,8 +28,11 @@ spec:
       annotations:
         kubernetes.io/ingress.class: "nginx"
     service:
-      type: LoadBalancer
-      loadBalancerIP: 192.168.128.165
+      main:
+        type: LoadBalancer
+        externalIPs:
+          - "192.168.128.165"
+        externalTrafficPolicy: Local
     securityContext:
       privileged:  true
     persistence:
