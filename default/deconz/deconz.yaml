@@ -20,10 +20,6 @@ spec:
     image:
       tag: "amd64-2.09.01"
     timezone: "Europe/Berlin"
-    persistence:
-      enabled: true
-      size: 1Gi
-      storageClass: "local-path"
     ingress:
       enabled: true
       path: /
@@ -34,9 +30,6 @@ spec:
     service:
       type: LoadBalancer
       loadBalancerIP: 192.168.128.165
-    zigbeeDevice:
-      enabled: true
-      hostPath: /dev/ttyACM0
     persistence:
       config:
         enabled: true
