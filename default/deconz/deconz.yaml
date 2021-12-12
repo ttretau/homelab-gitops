@@ -18,7 +18,7 @@ spec:
       interval: 5m
   values:
     image:
-      tag: "amd64-2.09.01"
+      tag: "2.12.01"
     timezone: "Europe/Berlin"
     ingress:
       enabled: true
@@ -30,6 +30,8 @@ spec:
     service:
       type: LoadBalancer
       loadBalancerIP: 192.168.128.165
+    securityContext:
+      privileged:  true
     persistence:
       config:
         enabled: true
