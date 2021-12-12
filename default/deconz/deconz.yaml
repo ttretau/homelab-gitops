@@ -1,0 +1,52 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: deconz
+  namespace: default
+spec:
+  interval: 5m
+  chart:
+    spec:
+      # renovate: registryUrl=https://k8s-at-home.com/charts/
+      chart: deconz
+      version: 6.1.
+      sourceRef:
+        kind: HelmRepository
+        name: k8s-at-home-charts
+        namespace: flux-system
+      interval: 5m
+  values:
+    image:
+      tag: "amd64-2.09.01"
+    timezone: "Europe/Berlin"
+    persistence:
+      enabled: true
+      size: 1Gi
+      storageClass: "local-path"
+    ingress:
+      enabled: true
+      path: /
+      hosts:
+        - host: deconz.homelab
+      annotations:
+        kubernetes.io/ingress.class: "nginx"
+    service:
+      type: LoadBalancer
+      loadBalancerIP: 192.168.128.165
+    zigbeeDevice:
+      enabled: true
+      hostPath: /dev/ttyACM0
+    probes:
+      liveness:
+        enabled: false
+      readiness:
+        enabled: false
+    resources:
+      limits:
+        memory: 1024Mi
+      requests:
+        cpu: 35m
+        memory: 512Mi
+    monitoring:
+      enabled: true
