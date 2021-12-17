@@ -26,9 +26,9 @@ spec:
       tls:
         mode: DISABLE
     match:
-      - uri:
+    - uri:
         prefix: /health
-      - uri:
+    - uri:
         prefix: /api
   # promote the canary without analysing it (default false)
   skipAnalysis: false
