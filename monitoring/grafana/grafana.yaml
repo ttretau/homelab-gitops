@@ -133,6 +133,7 @@ spec:
       analytics:
         check_for_updates: false
       log:
+        level: debug
         mode: console
       grafana_net:
         url: https://grafana.net
