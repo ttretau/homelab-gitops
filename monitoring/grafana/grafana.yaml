@@ -124,6 +124,18 @@ spec:
             access: proxy
             url: http://influxdb:8086
             database: uptimerobot
+    readinessProbe:
+      httpGet:
+        path: /api/health
+        port: 3000
+
+    livenessProbe:
+      httpGet:
+        path: /api/health
+        port: 3000
+      initialDelaySeconds: 120
+      timeoutSeconds: 60
+      failureThreshold: 20
     grafana.ini:
       paths:
         data: /var/lib/grafana/data
