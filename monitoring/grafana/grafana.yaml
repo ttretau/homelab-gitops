@@ -46,7 +46,7 @@ spec:
 #        - hosts:
 #            - grafana.eviljungle.com
     plugins:
-      - natel-discrete-panel
+#      - natel-discrete-panel
       - pr0ps-trackmap-panel
       - grafana-piechart-panel
       - grafana-clock-panel
