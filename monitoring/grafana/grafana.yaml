@@ -93,6 +93,12 @@ spec:
       dashboards:
         enabled: true
         searchNamespace: ALL
+    affinity:
+      nodeAffinity:
+        requiredDuringSchedulingIgnoredDuringExecution:
+          nodeSelectorTerms:
+            - matchExpressions:
+                - {key: "feature.node.kubernetes.io/custom-conbee", operator: In, values: ["true"]}
     datasources:
       datasources.yaml:
         apiVersion: 1
@@ -121,7 +127,9 @@ spec:
       httpGet:
         path: /api/health
         port: 3000
-
+      initialDelaySeconds: 120
+      timeoutSeconds: 60
+      failureThreshold: 20
     livenessProbe:
       httpGet:
         path: /api/health
