@@ -17,13 +17,18 @@ spec:
         namespace: flux-system
       interval: 5m
   values:
-    image:
-      repository: pihole/pihole
-      tag: 2022.01.1
+#     image:
+#       repository: pihole/pihole
+#       tag: 2022.01.1
     dnsmasq:
       customDnsEntries:
         - address=/hass-config.homelab/192.168.128.160
+        - address=/prometheus-operated.homelab/192.168.128.160
+        - address=/alertmanager-operated.homelab/192.168.128.160
         - address=/nextcloud/192.168.128.163
+        - address=/pihole.homelab/192.168.128.174
+        - address=/vernemq.homelab/192.168.128.171
+        - address=/deconz.homelab/192.168.128.165
     persistentVolumeClaim:
       enabled: true
     serviceWeb:
