@@ -17,6 +17,7 @@ spec:
         namespace: flux-system
       interval: 5m
   values:
+    maxUnavailable: 0
 #     image:
 #       repository: pihole/pihole
 #       tag: 2022.01.1
