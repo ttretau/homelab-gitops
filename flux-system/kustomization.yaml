@@ -6,6 +6,6 @@ resources:
 - flux-slack-secret.enc.yaml
 - flux-slack.yaml
 - flux-alert.yaml
-- apps.yaml
+# - apps.yaml
 #- sops.yaml
 #- cluster-secrets.enc.yaml
