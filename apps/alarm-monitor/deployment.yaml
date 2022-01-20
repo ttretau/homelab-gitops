@@ -1,0 +1,60 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: alarm-monitor-backend
+  namespace: apps
+  labels:
+    app: alarm-monitor-backend
+spec:
+#  minReadySeconds: 5
+#  revisionHistoryLimit: 5
+#  progressDeadlineSeconds: 60
+#  strategy:
+#    rollingUpdate:
+#      maxUnavailable: 0
+#    type: RollingUpdate
+  selector:
+    matchLabels:
+      app: alarm-monitor-backend
+  template:
+    metadata:
+#      annotations:
+#        prometheus.io/scrape: "true"
+      labels:
+        app: alarm-monitor-backend
+    spec:
+      containers:
+        - name: alarm-monitor-backend
+          image: ghcr.io/ttretau/alarm_monitor/alarm-monitor-app:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8765
+              name: http
+              protocol: TCP
+          env:
+            - name: DATABASE_URL
+              valueFrom:
+                secretKeyRef:
+                  name: apps-secrets
+                  key: ALARM_MONITOR_DATABASE_URL
+            - name: SECRET_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: apps-secrets
+                  key: ALARM_MONITOR_SECRET_KEY
+            - name: DEBUG
+              value: "False"
+#          readinessProbe:
+#            httpGet:
+#              path: /readiness
+#              port: 8765
+#            initialDelaySeconds: 20
+#            timeoutSeconds: 5
+          resources:
+            limits:
+              cpu: 1000m
+              memory: 512Mi
+            requests:
+              cpu: 100m
+              memory: 256Mi
