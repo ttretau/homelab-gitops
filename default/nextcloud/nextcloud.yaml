@@ -61,6 +61,7 @@ spec:
       enabled: true
       annotations:
         nginx.ingress.kubernetes.io/proxy-body-size: "0"
+        nginx.org/hsts: true
         kubernetes.io/ingress.class: "nginx"
         nginx.ingress.kubernetes.io/server-snippet: |-
           server_tokens off;
@@ -88,7 +89,7 @@ spec:
           }
       tls:
         - hosts:
-          - "nc.rulle.tretau.dev"
+          - "nc.tretau.dev"
     persistence:
       enabled: true
       storageClass: nfs-client
