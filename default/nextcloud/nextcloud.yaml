@@ -88,9 +88,14 @@ spec:
           location ~ ^/(?:autotest|occ|issue|indie|db_|console) {
             deny all;
           }
+      hosts:
+      - host: nc.tretau.net
+        paths:
+        - path: /
+          pathType: Prefix
       tls:
-        - hosts:
-          - "nc.tretau.dev"
+      - hosts:
+        - "nc.tretau.dev"
     persistence:
       enabled: true
       storageClass: nfs-client
