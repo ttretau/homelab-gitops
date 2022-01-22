@@ -94,9 +94,9 @@ spec:
         - path: /
           pathType: Prefix
       tls:
+      - hosts:
+        - "nc.tretau.dev"
         secretName: tls-crt-secret
-        - hosts:
-          - "nc.tretau.dev"
     persistence:
       enabled: true
       storageClass: nfs-client
