@@ -10,5 +10,24 @@ spec:
     privateKeySecretRef:
       name: letsencrypt-production
     solvers:
-    - http01:
-        ingress: {}
+    - selector: {}
+      dns01:
+        cloudflare:
+          email: "bam@tretau.net"
+          apiKeySecretRef:
+            name: cert-manager-secrets
+            key: CLOUDFLARE_TOKEN
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: acme-crt
+  namespace: kube-system
+spec:
+  secretName: acme-crt-secret
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  dnsNames:
+    - tretau.dev
+    - '*.tretau.dev'
