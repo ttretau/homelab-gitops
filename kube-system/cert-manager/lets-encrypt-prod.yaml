@@ -14,7 +14,7 @@ spec:
       dns01:
         cloudflare:
           email: "bam@tretau.net"
-          apiKeySecretRef:
+          apiTokenSecretRef:
             name: cert-manager-secrets
             key: CLOUDFLARE_TOKEN
 ---
