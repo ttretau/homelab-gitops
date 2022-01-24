@@ -26,7 +26,7 @@ metadata:
 spec:
   secretName: acme-crt-secret
   issuerRef:
-    name: letsencrypt-prod
+    name: letsencrypt-production
     kind: ClusterIssuer
   dnsNames:
     - tretau.dev
