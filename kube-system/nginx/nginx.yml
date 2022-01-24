@@ -18,7 +18,7 @@ spec:
       interval: 5m
   values:
     controller:
-      replicaCount: 1
+      replicaCount: 2
       config:
         hsts: true
         hsts-include-subdomains: true
@@ -35,7 +35,7 @@ spec:
         prometheusRule:
           enabled: false
       extraArgs:
-        default-ssl-certificate: "cert-manager/acme-crt-secret"
+        default-ssl-certificate: "kube-system/acme-crt-secret"
       resources:
         requests:
           memory: 300Mi
