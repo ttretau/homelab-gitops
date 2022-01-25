@@ -9,7 +9,7 @@ spec:
   tls:
     - hosts:
         - alarm.t0n.eu
-      secretName: kube-system/acme-crt-t0n
+      secretName: acme-crt-t0n
   rules:
     - host: alarm.t0n.eu
       http:
