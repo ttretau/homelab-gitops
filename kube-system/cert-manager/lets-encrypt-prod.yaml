@@ -31,3 +31,17 @@ spec:
   dnsNames:
     - tretau.dev
     - '*.tretau.dev'
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: acme-crt-t0n
+  namespace: kube-system
+spec:
+  secretName: acme-crt-t0n-secret
+  issuerRef:
+    name: letsencrypt-production
+    kind: ClusterIssuer
+  dnsNames:
+    - t0n.eu
+    - '*.t0n.eu'
