@@ -2,6 +2,7 @@ apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
   name: alarm-manager-ingress
+  namespace: apps
   annotations:
     kubernetes.io/ingress.class: "nginx"
 spec:
