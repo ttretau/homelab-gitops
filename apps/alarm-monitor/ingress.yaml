@@ -1,0 +1,18 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: alarm-manager-ingress
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+spec:
+  tls:
+    - hosts:
+        - alarm.t0n.eu
+      secretName: acme-crt-t0n
+  rules:
+    - host: alarm.t0n.eu
+      http:
+        paths:
+          - backend:
+              serviceName: alarm-monitor-service
+              servicePort: 80
