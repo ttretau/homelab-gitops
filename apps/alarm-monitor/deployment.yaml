@@ -27,7 +27,7 @@ spec:
       containers:
         - name: alarm-monitor-backend
           image: ghcr.io/ttretau/alarm_monitor/alarm-monitor-app:latest
-          imagePullPolicy: IfNotPresent
+          imagePullPolicy: Always
           ports:
             - containerPort: 8765
               name: http
