@@ -33,9 +33,8 @@ spec:
               name: http
               protocol: TCP
           volumeMounts:
-            - mountPath: "/home/app/"
+            - mountPath: "/home/app"
               name: root-crt
-              readOnly: true
           env:
             - name: DATABASE_URL
               valueFrom:
