@@ -33,7 +33,7 @@ spec:
               name: http
               protocol: TCP
           volumeMounts:
-            - mountPath: "/home/app"
+            - mountPath: "/home/app/web/cfg"
               name: root-crt
           env:
             - name: DATABASE_URL
