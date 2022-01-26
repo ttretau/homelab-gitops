@@ -43,6 +43,11 @@ spec:
                 secretKeyRef:
                   name: apps-secrets
                   key: ALARM_MONITOR_SECRET_KEY
+            - name: ALLOWED_HOSTS
+              valueFrom:
+                secretKeyRef:
+                  name: apps-secrets
+                  key: ALARM_MONITOR_ALLOWED_HOSTS
             - name: DEBUG
               value: "False"
 #          readinessProbe:
