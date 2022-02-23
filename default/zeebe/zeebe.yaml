@@ -1,0 +1,44 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: zeebe
+  namespace: default
+spec:
+  interval: 5m
+  chart:
+    spec:
+      # renovate: registryUrl=https://helm.camunda.io
+      chart: zeebe-full-helm
+      version: 1.2.0
+      sourceRef:
+        kind: HelmRepository
+        name: camunda-zeebe-charts
+        namespace: flux-system
+      interval: 5m
+  values:
+    zeebe-cluster-helm:
+      clusterSize: 1
+      partitionCount: 1
+      replicationFactor: 1
+      kibana:
+        enabled: false
+      elasticsearch:
+        enabled: true
+        replicas: 1
+        resources:
+          requests:
+            memory: 1000Mi
+            cpu: 100m
+          limits:
+            cpu: 500m
+            memory: 1500Mi
+      gateway:
+        replicas: 1
+      resources:
+        requests:
+          memory: 1000Mi
+          cpu: 100m
+        limits:
+          cpu: 500m
+          memory: 1500Mi
