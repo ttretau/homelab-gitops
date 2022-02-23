@@ -10,7 +10,7 @@ spec:
     spec:
       # renovate: registryUrl=https://helm.camunda.io
       chart: ccsm-helm
-      version: 1.2.0
+      version: 1.3.4
       sourceRef:
         kind: HelmRepository
         name: camunda-zeebe-charts
