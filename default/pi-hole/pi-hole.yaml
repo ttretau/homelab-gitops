@@ -20,7 +20,7 @@ spec:
     maxUnavailable: 0
     image:
       repository: pihole/pihole
-      tag: 2022.02.1
+      tag: 2022.04.1
     dnsmasq:
       customDnsEntries:
         - address=/hass-config.homelab/192.168.128.160
