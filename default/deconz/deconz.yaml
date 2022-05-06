@@ -18,7 +18,7 @@ spec:
       interval: 5m
   values:
     image:
-      tag: "2.12.01"
+      tag: "2.15.03"
     timezone: "Europe/Berlin"
     ingress:
       main:
