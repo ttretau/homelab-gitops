@@ -18,8 +18,8 @@ spec:
       interval: 5m
   values:
     image:
-      repository: marthoc/deconz
-      tag: "2.12.01"
+      repository: deconzcommunity/deconz
+      tag: "2.15.03"
     timezone: "Europe/Berlin"
     ingress:
       main:
