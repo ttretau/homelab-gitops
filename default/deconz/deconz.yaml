@@ -19,7 +19,7 @@ spec:
   values:
     image:
       repository: marthoc/deconz
-      tag: "2.12.01"
+      tag: "2.13.01"
     timezone: "Europe/Berlin"
     ingress:
       main:
