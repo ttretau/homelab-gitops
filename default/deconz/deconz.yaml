@@ -54,10 +54,10 @@ spec:
       usb:
         enabled: true
         type: hostPath
-        hostPath: /dev/serial/by-id/usb-dresden_elektronik_ingenieurtechnik_GmbH_ConBee_II_DE2258937-if00
-        mountPath: /dev/ttyS0
+        hostPath: /dev/ttyACM0
+        mountPath: /dev/ttyACM0
     env:
-      DECONZ_DEVICE: /dev/ttyS0
+      DECONZ_DEVICE: /dev/ttyACM0
     probes:
       liveness:
         enabled: false
