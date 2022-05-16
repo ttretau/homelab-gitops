@@ -23,9 +23,8 @@ spec:
       tag: 2022.04.3
     dnsmasq:
       customDnsEntries:
-        - address=/hass-config/192.168.128.160
-        - address=/prometheus-operated/192.168.128.160
-        - address=/alertmanager-operated/192.168.128.160
+        - address=/hass/192.168.128.161
+        - address=/hass-config/192.168.128.172
         - address=/nextcloud/192.168.128.163
         - address=/pihole/192.168.128.174
         - address=/vernemq/192.168.128.171

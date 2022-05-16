@@ -23,7 +23,7 @@ spec:
         - "192.168.128.172"
       externalTrafficPolicy: Local
     ingress:
-      enabled: true
+      enabled: false
     resources:
       limits:
         cpu: 250m

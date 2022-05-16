@@ -65,7 +65,7 @@ spec:
               severity: 'warning'
             equal: ['alertname', 'namespace']
       ingress:
-        enabled: true
+        enabled: false
         pathType: Prefix
         hosts:
         - alertmanager-operated.homelab
@@ -110,7 +110,7 @@ spec:
       enabled: false
     prometheus:
       ingress:
-        enabled: true
+        enabled: false
         pathType: Prefix
         hosts:
         - prometheus-operated.homelab

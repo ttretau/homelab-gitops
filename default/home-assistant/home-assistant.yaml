@@ -35,7 +35,7 @@ spec:
         externalTrafficPolicy: Local
     ingress:
       main:
-        enabled: true
+        enabled: false
         ingressClassName: "nginx"
         hosts:
           - host: "hass.homelab"
@@ -79,16 +79,12 @@ spec:
           - --extensions-dir
           - "/config/.vscode"
         ingress:
-          enabled: true
-          ingressClassName: "nginx"
-          hosts:
-            - host: "hass-config.homelab"
-              paths:
-                - path: /
-                  pathType: Prefix
-          tls:
-            - hosts:
-                - "hass-config.homelab"
+          enabled: false
+        service:
+          type: LoadBalancer
+          externalIPs:
+            - "192.168.128.172"
+          externalTrafficPolicy: Local
         volumeMounts:
           - name: config
             mountPath: /config

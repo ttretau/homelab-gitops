@@ -23,16 +23,7 @@ spec:
     timezone: "Europe/Berlin"
     ingress:
       main:
-        enabled: true
-        ingressClassName: "nginx"
-        hosts:
-          - host: "deconz.homelab"
-            paths:
-              - path: /
-                pathType: Prefix
-        tls:
-          - hosts:
-              - "deconz.homelab"
+        enabled: false
     service:
       main:
         type: LoadBalancer
