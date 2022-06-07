@@ -10,7 +10,7 @@ spec:
     spec:
       # renovate: registryUrl=https://opensource.zalando.com/postgres-operator/charts/postgres-operator-ui/
       chart: postgres-operator-ui
-      version: 1.8.0
+      version: 1.8.1
       sourceRef:
         kind: HelmRepository
         name: zalando-postgres-operator-ui-charts
