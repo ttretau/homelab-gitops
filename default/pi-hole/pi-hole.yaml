@@ -20,7 +20,7 @@ spec:
     maxUnavailable: 0
     image:
       repository: pihole/pihole
-      tag: 2022.08.1
+      tag: 2022.08.3
     dnsmasq:
       customDnsEntries:
         - address=/hass/192.168.128.161
