@@ -18,6 +18,8 @@ spec:
       interval: 5m
   values:
     maxUnavailable: 0
+    data:
+      storageClass: nfs-client
     image:
       repository: pihole/pihole
       tag: 2022.11.2
