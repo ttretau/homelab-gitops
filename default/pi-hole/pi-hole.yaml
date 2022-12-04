@@ -18,6 +18,8 @@ spec:
       interval: 5m
   values:
     maxUnavailable: 0
+    antiaff:
+      enabled: true
     data:
       storageClass: nfs-client
     image:
