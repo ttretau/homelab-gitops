@@ -20,6 +20,7 @@ spec:
     maxUnavailable: 0
     antiaff:
       enabled: true
+      strict: false
     replicaCount: 2
     data:
       storageClass: nfs-client
