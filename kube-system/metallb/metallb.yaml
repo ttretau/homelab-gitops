@@ -10,21 +10,19 @@ spec:
     spec:
       # renovate: registryUrl=https://charts.bitnami.com/bitnami
       chart: metallb
-      version: 4.1.12
+      version: 2.6.2
       sourceRef:
         kind: HelmRepository
         name: bitnami-charts
         namespace: flux-system
       interval: 5m
   values:
-    crds:
-      enabled: true
-#    configInline:
-#      address-pools:
-#        - name: default
-#          protocol: layer2
-#          addresses:
-#            - 192.168.128.160-192.168.128.179
+    configInline:
+      address-pools:
+        - name: default
+          protocol: layer2
+          addresses:
+            - 192.168.128.160-192.168.128.179
 #    prometheusRule:
 #      enabled: true
 #    prometheus:
