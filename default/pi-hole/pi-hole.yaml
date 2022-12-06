@@ -36,7 +36,7 @@ spec:
         - address=/vernemq/192.168.128.171
         - address=/deconz/192.168.128.165
     persistentVolumeClaim:
-      enabled: true
+      enabled: false
     serviceWeb:
       loadBalancerIP: 192.168.128.173
       annotations:
