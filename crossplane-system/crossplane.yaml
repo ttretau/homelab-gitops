@@ -19,3 +19,4 @@ spec:
     provider:
       packages:
         - xpkg.upbound.io/crossplane-contrib/provider-aws:v0.34.0
+        - xpkg.upbound.io/crossplane-contrib/provider-azure:v0.20.0
