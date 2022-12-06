@@ -17,5 +17,7 @@ spec:
       interval: 5m
   values:
     hubble:
+      relay:
+        enabled: true
       ui:
         enabled: true
