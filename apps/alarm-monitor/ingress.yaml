@@ -14,7 +14,8 @@ spec:
     - host: alarm.t0n.eu
       http:
         paths:
-          - backend:
+          - pathType: ImplementationSpecific
+            backend:
               service:
                 name: alarm-monitor-service
                 port:
