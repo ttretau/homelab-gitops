@@ -15,5 +15,7 @@ spec:
       http:
         paths:
           - backend:
-              serviceName: alarm-monitor-service
-              servicePort: 80
+              service:
+                name: alarm-monitor-service
+                port:
+                  number: 80
