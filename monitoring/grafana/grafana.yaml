@@ -29,7 +29,7 @@ spec:
     podAnnotations:
       configmap.reloader.stakater.com/reload: "grafana"
     persistence:
-      enabled: true
+      enabled: false
       size: 50Gi
       existingClaim: nfs-monitoring-pvc
     env:
