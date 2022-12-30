@@ -1,0 +1,146 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: grafana
+  namespace: monitoring
+spec:
+  interval: 5m
+  chart:
+    spec:
+      # renovate: registryUrl=https://grafana.github.io/helm-charts
+      chart: grafana
+      version: 6.48.2
+      sourceRef:
+        kind: HelmRepository
+        name: grafana-charts
+        namespace: flux-system
+      interval: 5m
+  values:
+    service:
+      type: LoadBalancer
+      loadBalancerIP: 192.168.128.169
+    admin:
+      existingSecret: "monitoring-secrets"
+      userKey: "SECRET_GRAFANA_USER"
+      passwordKey: "SECRET_GRAFANA_PASSWORD"
+    deploymentStrategy:
+      type: Recreate
+    podAnnotations:
+      configmap.reloader.stakater.com/reload: "grafana"
+    persistence:
+      enabled: true
+      size: 50Gi
+      existingClaim: nfs-monitoring-pvc
+    env:
+      GF_EXPLORE_ENABLED: true
+      GF_DISABLE_SANITIZE_HTML: true
+      GF_PANELS_DISABLE_SANITIZE_HTML: true
+      GF_LOG_FILTERS: rendering:debug
+    plugins:
+      - natel-discrete-panel
+      - pr0ps-trackmap-panel
+      - grafana-piechart-panel
+      - grafana-clock-panel
+      - vonage-status-panel
+      - https://github.com/panodata/grafana-map-panel/releases/download/0.15.0/grafana-map-panel-0.15.0.zip;grafana-worldmap-panel-ng
+    serviceMonitor:
+      enabled: false
+    dashboardProviders:
+      dashboardproviders.yaml:
+        apiVersion: 1
+        providers:
+          - name: 'default'
+            orgId: 1
+            folder: ''
+            type: file
+            disableDeletion: false
+            allowUiUpdates: true
+            options:
+              path: /var/lib/grafana/dashboards/default
+    dashboards:
+      default:
+        nginx-dashboard:
+          url: https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/grafana/dashboards/nginx.json
+          datasource: Prometheus
+        node-exporter:
+          url: https://grafana.com/api/dashboards/11074/revisions/9/download
+          datasource: Prometheus
+        node-exporter-full:
+          gnetId: 1860
+          revision: 23
+          datasource: Prometheus
+        prometheus-exporter-summary:
+          url: https://raw.githubusercontent.com/billimek/k8s-gitops/master/monitoring/grafana/dashboards/prometheus_exporter_summary.json
+          datasource: Prometheus
+        uptimerobot:
+          url: https://raw.githubusercontent.com/lekpamartin/uptimerobot_exporter/master/dashboards/grafana.json
+          datasource: Prometheus
+        vernemq:
+          url: https://raw.githubusercontent.com/vernemq/vernemq/master/metrics_scripts/grafana/VerneMQ%20Node%20Metrics.json
+          datasource: Prometheus
+    sidecar:
+      datasources:
+        enabled: true
+        searchNamespace: ALL
+        # defaultDatasourceEnabled: false
+      dashboards:
+        enabled: true
+        searchNamespace: ALL
+    affinity:
+      nodeAffinity:
+        requiredDuringSchedulingIgnoredDuringExecution:
+          nodeSelectorTerms:
+            - matchExpressions:
+                - {key: "feature.node.kubernetes.io/custom-conbee", operator: In, values: ["true"]}
+    datasources:
+      datasources.yaml:
+        apiVersion: 1
+        datasources:
+          - name: Prometheus
+            type: prometheus
+            url: http://prometheus-operated:9090
+            access: proxy
+            isDefault: true
+#          - name: influxdb
+#            type: influxdb
+#            access: proxy
+#            url: http://influxdb:8086
+#            database: telegraf
+          - name: home_assistant
+            type: influxdb
+            access: proxy
+            url: http://influxdb:8086
+            database: home_assistant
+          - name: uptimerobot
+            type: influxdb
+            access: proxy
+            url: http://influxdb:8086
+            database: uptimerobot
+    readinessProbe:
+      httpGet:
+        path: /api/health
+        port: 3000
+      initialDelaySeconds: 120
+      timeoutSeconds: 60
+      failureThreshold: 20
+    livenessProbe:
+      httpGet:
+        path: /api/health
+        port: 3000
+      initialDelaySeconds: 120
+      timeoutSeconds: 60
+      failureThreshold: 20
+    grafana.ini:
+      paths:
+        data: /var/lib/grafana/data
+        logs: /var/log/grafana
+        plugins: /var/lib/grafana/plugins
+        provisioning: /etc/grafana/provisioning
+      analytics:
+        check_for_updates: false
+      log:
+        level: info
+        mode: console
+      grafana_net:
+        url: https://grafana.net
