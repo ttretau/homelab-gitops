@@ -18,7 +18,7 @@ spec:
   values:
     image:
       repository: eclipse-mosquitto
-      tag: 1.6.12
+      tag: 1.6.15
     replicaCount: 1
     monitoring:
       sidecar:
