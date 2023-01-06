@@ -8,6 +8,7 @@ spec:
   interval: 5m
   chart:
     spec:
+      # renovate: registryUrl=https://storage.googleapis.com/t3n-helm-charts
       chart: mosquitto
       version: 2.4.1
       sourceRef:
