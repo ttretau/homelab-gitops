@@ -16,7 +16,7 @@ jobs:
       - name: Update Flux components
         id: update
         run: |
-          UGLY_VERSION="$(bin/flux -v)"
+          UGLY_VERSION="$(flux -v)"
           VERSION="v${UGLY_VERSION#*flux version }"
           flux install --version="${VERSION}" \
             --network-policy=false \
