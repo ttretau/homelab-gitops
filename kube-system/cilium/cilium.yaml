@@ -16,6 +16,8 @@ spec:
         namespace: flux-system
       interval: 5m
   values:
+    nodeinit:
+      enabled: true
     hubble:
       relay:
         enabled: false
