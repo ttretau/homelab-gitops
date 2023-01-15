@@ -76,9 +76,6 @@ spec:
         uptimerobot:
           url: https://raw.githubusercontent.com/lekpamartin/uptimerobot_exporter/master/dashboards/grafana.json
           datasource: Prometheus
-        vernemq:
-          url: https://raw.githubusercontent.com/vernemq/vernemq/master/metrics_scripts/grafana/VerneMQ%20Node%20Metrics.json
-          datasource: Prometheus
     sidecar:
       datasources:
         enabled: true
