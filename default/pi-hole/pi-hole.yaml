@@ -37,6 +37,12 @@ spec:
         - address=/deconz/192.168.128.165
     persistentVolumeClaim:
       enabled: false
+    monitoring:
+      sidecar:
+        enabled: true
+    podAnnotations:
+      prometheus.io/port: '9617'
+      prometheus.io/scrape: 'true'
     serviceWeb:
       loadBalancerIP: 192.168.128.173
       annotations:
