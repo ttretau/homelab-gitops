@@ -27,7 +27,7 @@ spec:
       settings:
         clustername: jakku
       communications:
-        existingSecretName: "botkube-config-secret"
+        existingSecretName: "botkube-communication-secret"
       resources:
         - name: v1/pods
           namespaces:
