@@ -53,6 +53,10 @@ spec:
       startup:
         enabled: false
     persistence:
+      usb:
+        enabled: true
+        type: hostPath
+        hostPath: /dev/ttyUSB0
       config:
         enabled: true
         existingClaim: nfs-data-pvc
