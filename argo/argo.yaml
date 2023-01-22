@@ -23,3 +23,12 @@ spec:
       service:
         type: LoadBalancer
         loadBalancerIP: 192.168.128.174
+    configs:
+      rbac:
+        policy.default: role:readonly
+        policy.csv: |
+          p, role:readonly, applications, get, default/*, allow
+          p, role:readonly, applications, sync, default/*, allow
+          p, role:readonly, clusters, get, *, allow
+          p, role:readonly, repositories, get, *, allow
+          p, role:readonly, project, get, default/*, allow
