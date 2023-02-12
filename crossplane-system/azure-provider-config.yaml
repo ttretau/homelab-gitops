@@ -8,4 +8,4 @@ spec:
     secretRef:
       namespace: crossplane-system
       name: azure-account-creds
-      key: credentials
+      key: creds
