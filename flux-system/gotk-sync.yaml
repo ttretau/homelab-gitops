@@ -151,23 +151,3 @@ spec:
     secretRef:
       # Reference the new 'sops-gpg' secret
       name: sops-gpg
----
-apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
-kind: Kustomization
-metadata:
-  name: flux-system-argo-system
-  namespace: flux-system
-spec:
-  interval: 20m0s
-  path: ./argo
-  prune: true
-  sourceRef:
-    kind: GitRepository
-    name: flux-system
-  # Enable decryption
-  decryption:
-    # Use the sops provider
-    provider: sops
-    secretRef:
-      # Reference the new 'sops-gpg' secret
-      name: sops-gpg
