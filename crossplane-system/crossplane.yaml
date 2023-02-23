@@ -18,7 +18,7 @@ spec:
   values:
     provider:
       packages:
-        - xpkg.upbound.io/crossplane-contrib/provider-aws:v0.34.0
+        - xpkg.upbound.io/crossplane-contrib/provider-aws:v0.37.1
         - xpkg.upbound.io/crossplane-contrib/provider-azure:v0.20.1
         - xpkg.upbound.io/crossplane-contrib/provider-helm:v0.13.0
         - xpkg.upbound.io/crossplane-contrib/provider-kubernetes:v0.6.0
