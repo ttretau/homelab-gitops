@@ -1,0 +1,61 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: vzlogger
+  namespace: apps
+data:
+  vzlogger.conf: |
+      {
+          "retry": 10,
+          "verbosity": 15,          
+          "local": {
+              "enabled": false,
+              "port": 8081,
+              "index": true,
+              "timeout": 0,
+              "buffer": 0
+          },
+          "mqtt": {
+            "enabled": true,  // enable mqtt client. needs host and port as well
+            "host": "192.168.128.171", // mqtt server addr
+            "port": 1883, // 1883 for unencrypted, 8883 enc, 8884 enc cert needed,
+            "cafile": "", // optional file with server CA
+            "capath": "", // optional path for server CAs. see mosquitto.conf. Specify only cafile or capath
+            "certfile": "", // optional file for your client certificate (e.g. client.crt)
+            "keyfile": "", // optional path for your client certficate private key (e.g. client.key)
+            "keypass": "", // optional password for your private key
+            "keepalive": 30, // optional keepalive in seconds.
+            "topic": "vzlogger/data", // optional topic dont use $ at start and no / at end
+            "id": "", // optional static id, if not set "vzlogger_<pid>" will be used
+            "user": "", // optional user name for the mqtt server
+            "pass": "", // optional password for the mqtt server
+            "retain": false, // optional use retain message flag
+            "rawAndAgg": false, // optional publish raw values even if agg mode is used
+            "qos": 0, // optional quality of service, default is 0
+            "timestamp": false // optional whether to include a timestamp in the payload
+          },
+          "meters": [
+              {
+                  "enabled": true,
+                  "allowskip": false,
+                  "interval": -1,
+                  "aggtime": -1,
+                  "aggfixedinterval": false,
+                  "channels": [
+                      {
+                          "uuid": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeee",
+                          "middleware": "null",
+                          "api": "null",
+                          "identifier": "1.8.0", // OBIS identifier
+                          "aggmode": "max" // aggregation mode: aggregate meter readings during <aggtime> interval
+                      }
+                  ],
+                  "protocol": "d0",
+                  "device": "/dev/ttyUSB1",
+                  "pullseq": "2F3F210D0A",
+                  "baudrate": 300,
+                  "parity": "7e1",
+                  "read_timeout": 10
+              }
+          ]
+      }
