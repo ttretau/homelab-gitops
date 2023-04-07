@@ -1,0 +1,47 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vzlogger
+  namespace: apps
+  labels:
+    app: vzlogger
+spec:
+  selector:
+    matchLabels:
+      app: vzlogger
+  template:
+    metadata:
+      labels:
+        app: vzlogger
+    spec:
+      securityContext:
+        runAsUser: 0
+        runAsGroup: 18
+        fsGroup: 18
+      containers:
+        - name: vzlogger
+          image: ghcr.io/ttretau/vzlogger:master
+          imagePullPolicy: Always
+          securityContext:
+            privileged: true
+          volumeMounts:
+            - mountPath: /dev/ttyUSB1
+              name: ttyusb1
+            - mountPath: "/etc/vzlogger.conf"
+              subPath: vzlogger.conf
+              name: vzlogger-configmap-volume
+          resources:
+            limits:
+              cpu: 500m
+              memory: 512Mi
+            requests:
+              cpu: 100m
+              memory: 256Mi
+      volumes:
+        - name: vzlogger-configmap-volume
+          configMap:
+            name: vzlogger
+        - name: ttyusb1
+          hostPath:
+            path: /dev/ttyUSB1
