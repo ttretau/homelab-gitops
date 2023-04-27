@@ -42,13 +42,13 @@ data:
                   "aggtime": -1,
                   "aggfixedinterval": false,
                   "channels": [
-                      {
-                          "uuid": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeee",
-                          "middleware": "null",
-                          "api": "null",
-                          "identifier": "1.8.0", // OBIS identifier
-                          "aggmode": "max" // aggregation mode: aggregate meter readings during <aggtime> interval
-                      }
+                    {
+                        "uuid": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeee",
+                        "middleware": "null",
+                        "api": "null",
+                        "identifier": "1.8.0", // OBIS identifier
+                        "aggmode": "max"       // aggregation mode: aggregate meter readings during <aggtime> interval
+                    }
                   ],
                   "protocol": "d0",
                   "device": "/dev/ttyUSB1",
