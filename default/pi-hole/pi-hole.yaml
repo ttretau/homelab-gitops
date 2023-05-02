@@ -10,7 +10,7 @@ spec:
     spec:
       # renovate: registryUrl=https://mojo2600.github.io/pihole-kubernetes/
       chart: pihole
-      version: 2.12.0
+      version: 2.14.0
       sourceRef:
         kind: HelmRepository
         name: pi-hole-charts
@@ -26,7 +26,7 @@ spec:
       storageClass: nfs-client
     image:
       repository: pihole/pihole
-      tag: 2023.02.2
+      tag: 2023.03.1
     dnsmasq:
       customDnsEntries:
         - address=/hass/192.168.128.161
