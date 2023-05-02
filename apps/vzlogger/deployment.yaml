@@ -26,8 +26,8 @@ spec:
           securityContext:
             privileged: true
           volumeMounts:
-            - mountPath: /dev/ttyUSB1
-              name: ttyusb1
+            - mountPath: /dev/usb-ir-lesekopf0
+              name: usb-ir-lesekopf0
             - mountPath: "/etc/vzlogger.conf"
               subPath: vzlogger.conf
               name: vzlogger-configmap-volume
@@ -42,6 +42,6 @@ spec:
         - name: vzlogger-configmap-volume
           configMap:
             name: vzlogger
-        - name: ttyusb1
+        - name: usb-ir-lesekopf0
           hostPath:
-            path: /dev/ttyUSB1
+            path: /dev/usb-ir-lesekopf0
