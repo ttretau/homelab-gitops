@@ -199,4 +199,4 @@ spec:
           honor_labels: true
           static_configs:
             - targets:
-                - kube-prometheus-stack-prometheus.monitoring.svc.cluster.local:9617
+                - pi-hole-pihole-dns-tcp.default.svc.cluster.local:9617
