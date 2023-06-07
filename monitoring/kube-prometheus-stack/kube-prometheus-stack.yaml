@@ -132,6 +132,9 @@ spec:
           cert-manager:
             url: https://raw.githubusercontent.com/monitoring-mixins/website/master/assets/cert-manager/dashboards/cert-manager.json
             datasource: Prometheus
+          pi-hole:
+            url: https://raw.githubusercontent.com/eko/pihole-exporter/master/grafana/dashboard.json
+            datasource: Prometheus
       sidecar:
         datasources:
           enabled: true
@@ -191,3 +194,9 @@ spec:
               resources:
                 requests:
                   storage: 10Gi
+        additionalScrapeConfigs:
+        - job_name: 'pihole'
+          honor_labels: true
+          static_configs:
+            - targets:
+                - kube-prometheus-stack-prometheus.monitoring.svc.cluster.local:9617
