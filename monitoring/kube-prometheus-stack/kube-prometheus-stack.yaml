@@ -102,6 +102,9 @@ spec:
         GF_DISABLE_SANITIZE_HTML: true
         GF_PANELS_DISABLE_SANITIZE_HTML: true
         GF_LOG_FILTERS: rendering:debug
+      persistence:
+        enabled: true
+        existingClaim: nfs-monitoring-pvc
       plugins:
         - natel-discrete-panel
         - pr0ps-trackmap-panel
