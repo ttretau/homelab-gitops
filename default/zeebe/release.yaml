@@ -17,6 +17,10 @@ spec:
         namespace: flux-system
       interval: 5m
   values:
+    tasklist:
+      enabled: false
+    optimizer:
+      enabled: false
     elasticsearch:
       enabled: true
       replicas: 1
