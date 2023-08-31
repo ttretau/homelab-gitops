@@ -9,7 +9,7 @@ spec:
   chart:
     spec:
       # renovate: registryUrl=https://helm.camunda.io
-      chart: ccsm-helm
+      chart: camunda/camunda-platform
       version: 0.0.29
       sourceRef:
         kind: HelmRepository
