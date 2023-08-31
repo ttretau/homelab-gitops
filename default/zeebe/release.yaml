@@ -9,7 +9,7 @@ spec:
   chart:
     spec:
       # renovate: registryUrl=https://helm.camunda.io
-      chart: camunda/camunda-platform
+      chart: camunda-platform
       version: 8.2.12
       sourceRef:
         kind: HelmRepository
