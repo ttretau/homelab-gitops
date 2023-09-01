@@ -17,6 +17,12 @@ spec:
         namespace: flux-system
       interval: 5m
   values:
+    global:
+      identity:
+        auth:
+          enabled: false
+    keycloak:
+      enabled: false
     tasklist:
       enabled: false
     optimize:
@@ -31,6 +37,21 @@ spec:
         limits:
           cpu: 500m
           memory: 1500Mi
+    webModeler:
+      enabled: false
+    identity:
+      enabled: false
+    operate:
+      enabled: false
+    zeebe-gateway:
+      replicas: 1
+      resources:
+        requests:
+          cpu: 100m
+          memory: 450Mi
+        limits:
+          cpu: 300m
+          memory: 450Mi
     zeebe:
       clusterSize: 1
       partitionCount: 1
