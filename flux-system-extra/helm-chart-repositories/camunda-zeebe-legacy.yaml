@@ -6,5 +6,5 @@ metadata:
   namespace: flux-system
 spec:
   interval: 180m
-  url: https://github.com/camunda-community-hub/zeebe-helm
+  url: https://raw.githubusercontent.com/camunda-community-hub/zeebe-helm/master/
   timeout: 3m
