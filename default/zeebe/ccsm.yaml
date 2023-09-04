@@ -45,6 +45,17 @@ spec:
       enabled: false
     operate:
       enabled: false
+    connectors:
+      enabled: true
+      readinessProbe:
+        enabled: false
+      resources:
+        requests:
+          cpu: 1
+          memory: 450Mi
+        limits:
+          cpu: 2
+          memory: 1Gi
     zeebe-gateway:
       replicas: 1
       resources:
