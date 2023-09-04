@@ -64,7 +64,7 @@ spec:
           memory: 450Mi
         limits:
           cpu: 300m
-          memory: 450Mi
+          memory: 850Mi
     zeebe:
       clusterSize: 1
       partitionCount: 1
