@@ -44,7 +44,7 @@ spec:
     identity:
       enabled: false
     operate:
-      enabled: true
+      enabled: false
     zeebe-gateway:
       replicas: 1
       resources:
