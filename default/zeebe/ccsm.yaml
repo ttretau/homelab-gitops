@@ -47,6 +47,13 @@ spec:
       enabled: false
     connectors:
       enabled: true
+      extraVolumeMounts:
+        - name: application-config-volume
+          mountPath: /opt/app/
+      extraVolumes:
+        - name: application-config-volume
+          configMap:
+              name: connectors-application-config
       readinessProbe:
         enabled: false
       resources:
