@@ -49,7 +49,7 @@ spec:
       enabled: true
       extraVolumeMounts:
         - name: application-config-volume
-          mountPath: /opt/app/
+          mountPath: /opt/app/application.properties
       extraVolumes:
         - name: application-config-volume
           configMap:
