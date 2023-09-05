@@ -11,7 +11,7 @@ data:
     management.endpoints.web.exposure.include=metrics,health,prometheus
     cloud.gcp.logging.enabled=false
     camunda.connector.polling.enabled=false
-    operate.client.enabled=false
+    camunda.operate.client.enabled=false
     camunda.connector.polling.interval=5000
     camunda.connector.secrets.cache.millis=5000
     camunda.connector.webhook.enabled=true
