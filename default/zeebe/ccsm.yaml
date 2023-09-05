@@ -56,7 +56,7 @@ spec:
         - io.camunda.connector.runtime.app.ConnectorRuntimeApplication
       extraVolumeMounts:
         - name: application-config-volume
-          mountPath: /opt/config/
+          mountPath: /opt/app/config/
       extraVolumes:
         - name: application-config-volume
           configMap:
