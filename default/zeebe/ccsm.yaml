@@ -47,7 +47,6 @@ spec:
       enabled: false
     connectors:
       enabled: true
-      command: "java -cp /opt/app/* io.camunda.connector.runtime.app.ConnectorRuntimeApplication --spring.config.location=optional:classpath:/config/application.properties"
       extraVolumeMounts:
         - name: application-config-volume
           mountPath: /opt/app/config/
