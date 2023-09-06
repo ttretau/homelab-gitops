@@ -5,7 +5,17 @@ metadata:
   namespace: default
 data:
   application.properties: |
-    #empty
+    server.port=8080
+    zeebe.client.broker.gateway-address=localhost:26500
+    zeebe.client.security.plaintext=true
+    zeebe.client.worker.max-jobs-active=32
+    zeebe.client.worker.threads=10
+    camunda.connector.polling.enabled=false
+    camunda.connector.polling.interval=5000
+    operate.client.enabled=false
+    camunda.operate.client.enabled=false
+    management.context-path=/actuator
+    management.endpoints.web.exposure.include=metrics,health,prometheus
   application.yaml: |
     server:
       port: 8080
