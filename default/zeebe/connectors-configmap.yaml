@@ -5,20 +5,23 @@ metadata:
   namespace: default
 data:
   application.properties: |
-    server.port=8080
-    
-    zeebe.client.broker.gateway-address=localhost:26500
-    zeebe.client.security.plaintext=true
-    zeebe.client.worker.max-jobs-active=32
-    zeebe.client.worker.threads=10
-    
-    camunda.operate.client.enabled=false
-    operate.client.enabled=false
-    camunda.connector.polling.enabled=false
-    camunda.connector.polling.interval=5000
-    
-    # Operate config for use with docker-compose-core.yml
-    camunda.operate.client.url=http://localhost:8081
-    camunda.operate.client.username=demo
-    camunda.operate.client.password=demo
-    camunda.connector.webhook.enabled=true
+    #empty
+  application.yaml: |
+    server:
+      port: 8080
+    zeebe:
+      client:
+        broker:
+          gateway-address: localhost:26500
+        security:
+          plaintext: true
+        worker:
+          max-jobs-active: 32
+          threads: 10
+    operate:
+      client:
+        enabled: false
+    camunda:
+      connector:
+        polling:
+          enabled: false
