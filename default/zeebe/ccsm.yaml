@@ -71,6 +71,8 @@ spec:
           memory: 1Gi
     zeebe-gateway:
       replicas: 1
+      service:
+        type: LoadBalancer
       resources:
         requests:
           cpu: 100m
