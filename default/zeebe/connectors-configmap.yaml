@@ -16,24 +16,3 @@ data:
     camunda.operate.client.enabled=false
     management.context-path=/actuator
     management.endpoints.web.exposure.include=metrics,health,prometheus
-  application.yaml: |
-    server:
-      port: 8080
-    zeebe:
-      client:
-        broker:
-          gateway-address: localhost:26500
-        security:
-          plaintext: true
-        worker:
-          max-jobs-active: 32
-          threads: 10
-    operate:
-      client:
-        enabled: false
-    camunda:
-      operate:
-        enabled: false
-      connector:
-        polling:
-          enabled: false
