@@ -22,6 +22,8 @@ data:
       client:
         enabled: false
     camunda:
+      operate:
+        enable: false
       connector:
         polling:
           enabled: false
