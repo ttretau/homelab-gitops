@@ -23,7 +23,7 @@ data:
         enabled: false
     camunda:
       operate:
-        enable: false
+        enabled: false
       connector:
         polling:
           enabled: false
