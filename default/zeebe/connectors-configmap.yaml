@@ -6,18 +6,19 @@ metadata:
 data:
   application.properties: |
     server.port=8080
-    management.server.port=9080
-    management.context-path=/actuator
-    management.endpoints.web.exposure.include=metrics,health,prometheus
-    cloud.gcp.logging.enabled=false
-    camunda.connector.polling.enabled=false
+    
+    zeebe.client.broker.gateway-address=localhost:26500
+    zeebe.client.security.plaintext=true
+    zeebe.client.worker.max-jobs-active=32
+    zeebe.client.worker.threads=10
+    
     camunda.operate.client.enabled=false
+    operate.client.enabled=false
+    camunda.connector.polling.enabled=false
     camunda.connector.polling.interval=5000
-    camunda.connector.secrets.cache.millis=5000
+    
+    # Operate config for use with docker-compose-core.yml
+    camunda.operate.client.url=http://localhost:8081
+    camunda.operate.client.username=demo
+    camunda.operate.client.password=demo
     camunda.connector.webhook.enabled=true
-    camunda.connector.secret-provider.discovery.enabled=false
-    camunda.connector.secret-provider.environment.enabled=false
-    camunda.connector.auth.audience=connectors.dev.ultrawombat.com
-    camunda.connector.auth.issuer=https://weblogin.cloud.dev.ultrawombat.com/
-    # Enforce local connection, even if cluster-id set (for Operate Auth)
-    zeebe.client.connection-mode=ADDRESS
