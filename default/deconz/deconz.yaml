@@ -54,6 +54,15 @@ spec:
         enabled: false
       readiness:
         enabled: false
+      startup:
+        custom: true
+        spec:
+          failureThreshold: 80
+          periodSeconds: 5
+          successThreshold: 1
+          tcpSocket:
+            port: 80
+          timeoutSeconds: 10
     resources:
       limits:
         memory: 1024Mi
