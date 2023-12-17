@@ -51,6 +51,11 @@ spec:
                 secretKeyRef:
                   name: apps-secrets
                   key: ALARM_MONITOR_ALLOWED_HOSTS
+            - name: API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: alarm-monitor-fast
+                  key: key
             - name: DEBUG
               value: "False"
 #          readinessProbe:
