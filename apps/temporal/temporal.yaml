@@ -4,10 +4,9 @@ metadata:
   name: temporal
   namespace: apps
 spec:
-  targetNamespace: apps
   chart:
     spec:
-      chart: helm/temporal
+      chart: temporal
       reconcileStrategy: Revision
       sourceRef:
         kind: GitRepository
