@@ -19,11 +19,10 @@ spec:
   values:
     server:
       replicaCount: 1
-      cassandra:
-        config:
-          cluster_size: 1
-      prometheus:
-        enabled: false
-      elasticsearch:
-        enabled: false
-        replicas: 1
+    cassandra:
+      config:
+        cluster_size: 1
+    prometheus:
+      enabled: false
+    elasticsearch:
+      enabled: false
