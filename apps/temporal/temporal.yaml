@@ -12,7 +12,7 @@ spec:
       sourceRef:
         kind: GitRepository
         name: temporal
-        namespace: apps
+        namespace: flux-system
   interval: 5m
   install:
     remediation:
