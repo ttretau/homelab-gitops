@@ -1,0 +1,28 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: temporal
+  namespace: apps
+spec:
+  chart:
+    spec:
+      chart: ./
+      reconcileStrategy: Revision
+      sourceRef:
+        kind: GitRepository
+        name: temporal
+        namespace: flux-system
+  interval: 5m
+  install:
+    remediation:
+      retries: 3
+  values:
+    server:
+      replicaCount: 1
+      cassandra:
+        config:
+          cluster_size: 1
+      prometheus:
+        enabled: false
+      elasticsearch:
+        enabled: false
