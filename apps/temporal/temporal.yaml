@@ -22,6 +22,8 @@ spec:
       persistence:
         default:
           cassandra:
+            user: "cassandra"
+            password: "cassandra"
             hosts:
               - temporal-cassandra.apps.svc.cluster.local
     cassandra:
