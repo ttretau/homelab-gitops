@@ -19,6 +19,11 @@ spec:
   values:
     server:
       replicaCount: 1
+      persistence:
+        default:
+          cassandra:
+            hosts:
+              - temporal-cassandra.apps.svc.cluster.local
     cassandra:
       config:
         cluster_size: 1
