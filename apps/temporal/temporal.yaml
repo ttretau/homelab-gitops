@@ -24,6 +24,15 @@ spec:
           cassandra:
             user: "cassandra"
             password: "cassandra"
+            port: 9042
+            hosts:
+              - temporal-cassandra.apps.svc.cluster.local
+      visibility:
+        default:
+          cassandra:
+            user: "cassandra"
+            password: "cassandra"
+            port: 9042
             hosts:
               - temporal-cassandra.apps.svc.cluster.local
     cassandra:
