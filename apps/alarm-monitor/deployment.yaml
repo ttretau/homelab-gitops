@@ -58,6 +58,8 @@ spec:
                   key: key
             - name: DEBUG
               value: "False"
+            - name: TEMPORAL_HOST
+              value: "temporal-frontend.apps.svc.cluster.local"
 #          readinessProbe:
 #            httpGet:
 #              path: /readiness
