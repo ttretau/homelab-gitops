@@ -25,6 +25,24 @@ spec:
         app: alarm-monitor-backend
     spec:
       containers:
+        - name: alarm-monitor-worker
+          image: ghcr.io/ttretau/alarm_monitor:main
+          command:
+            - python
+            - run_worker.py
+          imagePullPolicy: Always
+          env:
+            - name: DEBUG
+              value: "False"
+            - name: TEMPORAL_HOST
+              value: "temporal-frontend.apps.svc.cluster.local"
+          resources:
+            limits:
+              cpu: 1000m
+              memory: 512Mi
+            requests:
+              cpu: 100m
+              memory: 256Mi
         - name: alarm-monitor-backend
           image: ghcr.io/ttretau/alarm_monitor:main
           imagePullPolicy: Always
@@ -51,7 +69,7 @@ spec:
                 secretKeyRef:
                   name: apps-secrets
                   key: ALARM_MONITOR_ALLOWED_HOSTS
-            - name: API_KEY
+            - name: API_KEYS
               valueFrom:
                 secretKeyRef:
                   name: alarm-monitor-fast
