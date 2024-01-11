@@ -15,4 +15,5 @@ spec:
         name: 1password-charts
         namespace: flux-system
   values:
-    serviceType: LoadBalancer
+    connect:
+      serviceType: LoadBalancer
