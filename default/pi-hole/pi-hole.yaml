@@ -21,7 +21,7 @@ spec:
     antiaff:
       enabled: true
       strict: false
-    replicaCount: 2
+    replicaCount: 1
     data:
       storageClass: nfs-client
     image:
