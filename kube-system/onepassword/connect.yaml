@@ -16,4 +16,6 @@ spec:
         namespace: flux-system
   values:
     connect:
-      serviceType: LoadBalancer
+      api:
+        serviceMonitor:
+          enabled: true
