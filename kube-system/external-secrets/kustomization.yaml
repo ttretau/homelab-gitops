@@ -5,3 +5,5 @@ resources:
   - secret-store.yaml
   - secrets/py-solis-s3-logger.yaml
   - secrets/apps.yaml
+  - secrets/alarm-monitor-fast.yaml
+  - secrets/slack-url.yaml
