@@ -9,3 +9,4 @@ resources:
   - secrets/slack-url.yaml
   - secrets/default.yaml
   - secrets/monitoring.yaml
+  - secrets/nextcloud.yaml
