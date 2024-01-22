@@ -11,3 +11,4 @@ resources:
   - secrets/monitoring.yaml
   - secrets/nextcloud.yaml
   - secrets/cert-manager.yaml
+  - secrets/home-assistant-secrets.yaml
