@@ -8,3 +8,4 @@ resources:
   - secrets/alarm-monitor-fast.yaml
   - secrets/slack-url.yaml
   - secrets/default.yaml
+  - secrets/monitoring.yaml
