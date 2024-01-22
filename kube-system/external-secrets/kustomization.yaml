@@ -4,3 +4,4 @@ resources:
   - external-secrets.yaml
   - secret-store.yaml
   - secrets/py-solis-s3-logger.yaml
+  - secrets/apps.yaml
