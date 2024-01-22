@@ -10,3 +10,4 @@ resources:
   - secrets/default.yaml
   - secrets/monitoring.yaml
   - secrets/nextcloud.yaml
+  - secrets/cert-manager.yaml
