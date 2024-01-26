@@ -5,4 +5,3 @@ resources:
 - https://github.com/jetstack/cert-manager/releases/download/v1.12.1/cert-manager.crds.yaml
 - deployment.yaml
 - lets-encrypt-prod.yaml
-- cert-manager-secrets.enc.yaml
