@@ -24,7 +24,7 @@ spec:
               valueFrom:
                 secretKeyRef:
                   name: py-solis-s3-logger
-                  key: password
+                  key: solis-password
           resources:
             limits:
               cpu: 500m
