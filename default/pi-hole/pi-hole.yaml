@@ -26,7 +26,7 @@ spec:
       storageClass: nfs-client
     image:
       repository: pihole/pihole
-      tag: 2024.02.0
+      tag: 2024.02.2
     dnsmasq:
       customDnsEntries:
         - address=/hass/192.168.128.161
