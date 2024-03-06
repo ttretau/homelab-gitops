@@ -50,9 +50,9 @@ spec:
             - containerPort: 8765
               name: http
               protocol: TCP
-          volumeMounts:
-            - mountPath: "/home/app/web/cfg"
-              name: root-crt
+#          volumeMounts:
+#            - mountPath: "/home/app/web/cfg"
+#              name: root-crt
           env:
             - name: DATABASE_URL
               valueFrom:
@@ -91,10 +91,10 @@ spec:
             requests:
               cpu: 100m
               memory: 256Mi
-      volumes:
-      - name: root-crt
-        secret:
-          secretName: apps-secrets
-          items:
-            - key: ALARM_MONITOR_ROOT_CRT
-              path: ".postgresql/root.crt"
+#      volumes:
+#      - name: root-crt
+#        secret:
+#          secretName: apps-secrets
+#          items:
+#            - key: ALARM_MONITOR_ROOT_CRT
+#              path: ".postgresql/root.crt"
