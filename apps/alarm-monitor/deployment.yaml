@@ -57,17 +57,17 @@ spec:
             - name: DATABASE_URL
               valueFrom:
                 secretKeyRef:
-                  name: apps-secrets
+                  name: apps
                   key: ALARM_MONITOR_DATABASE_URL
             - name: SECRET_KEY
               valueFrom:
                 secretKeyRef:
-                  name: apps-secrets
+                  name: apps
                   key: ALARM_MONITOR_SECRET_KEY
             - name: ALLOWED_HOSTS
               valueFrom:
                 secretKeyRef:
-                  name: apps-secrets
+                  name: apps
                   key: ALARM_MONITOR_ALLOWED_HOSTS
             - name: API_KEYS
               valueFrom:
