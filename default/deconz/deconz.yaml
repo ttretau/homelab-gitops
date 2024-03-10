@@ -55,6 +55,7 @@ spec:
       readiness:
         enabled: false
       startup:
+        enabled: false
         custom: true
         spec:
           failureThreshold: 80
