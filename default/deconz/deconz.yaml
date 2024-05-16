@@ -49,6 +49,7 @@ spec:
         mountPath: /dev/ttyACM0
     env:
       DECONZ_DEVICE: /dev/ttyACM0
+      DECONZ_START_VERBOSE: 1
     probes:
       liveness:
         enabled: false
