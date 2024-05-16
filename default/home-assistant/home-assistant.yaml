@@ -57,6 +57,10 @@ spec:
         enabled: true
         type: hostPath
         hostPath: /dev/ttyUSB0
+      usb1:
+        enabled: true
+        type: hostPath
+        hostPath: /dev/ttyUSB1
       config:
         enabled: true
         existingClaim: nfs-data-pvc
