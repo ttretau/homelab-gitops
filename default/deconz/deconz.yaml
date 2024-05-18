@@ -45,8 +45,8 @@ spec:
       usb:
         enabled: true
         type: hostPath
-        hostPath: /dev/ttyACM0
-        mountPath: /dev/ttyACM0
+        hostPath: /dev/ttyUSB2
+        mountPath: /dev/ttyUSB2
     env:
       DECONZ_DEVICE: /dev/ttyACM0
       DECONZ_START_VERBOSE: 1
