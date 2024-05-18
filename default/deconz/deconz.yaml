@@ -51,6 +51,7 @@ spec:
       DECONZ_DEVICE: /dev/ttyACM0
       DECONZ_START_VERBOSE: 1
       DEBUG_INFO: 1
+      DECONZ_BAUDRATE: 115200
     probes:
       liveness:
         enabled: false
