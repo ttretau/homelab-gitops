@@ -41,7 +41,7 @@ spec:
     persistence:
       config:
         enabled: true
-        existingClaim: nfs-data-pvc
+        existingClaim: deconz-data-pvc
       usb:
         enabled: true
         type: hostPath
