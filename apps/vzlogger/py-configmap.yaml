@@ -1,8 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: vzlogger
-  namespace: apps
-data:
-  vzlogger.conf: |
-      
