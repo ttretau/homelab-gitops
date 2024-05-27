@@ -3,7 +3,7 @@ kind: Kustomization
 resources:
 #  - https://raw.githubusercontent.com/external-secrets/external-secrets/main/deploy/crds/bundle.yaml
   - external-secrets.yaml
-#  - secret-store.yaml
+  - secret-store.yaml
   - secrets/py-solis-s3-logger.yaml
   - secrets/apps.yaml
   - secrets/alarm-monitor-fast.yaml
