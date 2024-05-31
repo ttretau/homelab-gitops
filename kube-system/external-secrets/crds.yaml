@@ -16,7 +16,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 1m
-  path: ./deploy/crds/bundle.yaml
+  path: ./deploy/crds/
   prune: true
   sourceRef:
     kind: GitRepository
