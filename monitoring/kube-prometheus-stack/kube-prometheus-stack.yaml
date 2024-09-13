@@ -200,3 +200,8 @@ spec:
           static_configs:
             - targets:
                 - pi-hole-pihole-dns-tcp.default.svc.cluster.local:9617
+        - job_name: 'tetragon'
+          honor_labels: true
+          static_configs:
+            - targets:
+                - tetragon.kube-system.svc.cluster.local:2112
