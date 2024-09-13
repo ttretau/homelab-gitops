@@ -16,3 +16,6 @@ spec:
         namespace: flux-system
       interval: 5m
   values:
+    tetragon:
+      prometheus:
+        metricsLabelFilter: "namespace,workload,binary" # "pod" label is disabled
