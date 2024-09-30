@@ -45,10 +45,10 @@ spec:
       usb:
         enabled: true
         type: hostPath
-        hostPath: /dev/ttyUSB1
-        mountPath: /dev/ttyUSB1
+        hostPath: /dev/usb-deconz
+        mountPath: /dev/usb-deconz
     env:
-      DECONZ_DEVICE: /dev/ttyUSB1
+      DECONZ_DEVICE: /dev/usb-deconz
       DECONZ_START_VERBOSE: 1
       DEBUG_INFO: 1
       DECONZ_BAUDRATE: 115200
