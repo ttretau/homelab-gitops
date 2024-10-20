@@ -17,5 +17,6 @@ spec:
       interval: 5m
   values:
     tetragon:
+      enabled: false
       prometheus:
         metricsLabelFilter: "namespace,workload,binary" # "pod" label is disabled
