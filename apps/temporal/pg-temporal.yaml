@@ -21,5 +21,9 @@ spec:
       defaultUsers: true
       schemas:
         temporal_visibility: { }
+    temporal:
+      defaultUsers: true
+      schemas:
+        temporal: { }
   postgresql:
     version: "13"
