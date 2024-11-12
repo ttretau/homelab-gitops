@@ -4,7 +4,7 @@ metadata:
   name: prod
   namespace: apps
 spec:
-  version: 1.24.3
+  version: 1.24.0
   numHistoryShards: 1
   persistence:
     defaultStore:
