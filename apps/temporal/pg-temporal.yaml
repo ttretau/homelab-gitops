@@ -17,6 +17,9 @@ spec:
   databases:
     temporal: temporal  # dbname: owner
   preparedDatabases:
-    temporal: {}
+    temporal_visibility:
+      defaultUsers: true
+      schemas:
+        temporal_visibility: { }
   postgresql:
     version: "13"
