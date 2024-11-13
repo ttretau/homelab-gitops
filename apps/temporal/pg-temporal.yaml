@@ -25,9 +25,9 @@ spec:
       defaultUsers: true
       schemas:
         temporal: { }
-    postgres:
+    defaultdb:
       defaultUsers: true
       schemas:
-        default: { }
+        defaultdb: { }
   postgresql:
     version: "13"
