@@ -17,4 +17,4 @@ spec:
   values:
     manager:
       image:
-        tag: 0.20.0
+        tag: v0.20.0
