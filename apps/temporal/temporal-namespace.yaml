@@ -1,8 +1,8 @@
 apiVersion: temporal.io/v1beta1
 kind: TemporalNamespace
 metadata:
-  name: default
-  namespace: apps
+  name: alarm
+  namespace: temporal
 spec:
   clusterRef:
     name: prod
