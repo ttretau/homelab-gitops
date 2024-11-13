@@ -15,4 +15,6 @@ spec:
         name: temporal-operator-charts
         namespace: flux-system
   values:
-    {}
+    manager:
+      image:
+        tag: 0.20.0
