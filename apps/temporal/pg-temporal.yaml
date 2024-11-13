@@ -19,15 +19,9 @@ spec:
   preparedDatabases:
     temporal_visibility:
       defaultUsers: true
-      schemas:
-        temporal_visibility: { }
+      schemas: {}
     temporal:
       defaultUsers: true
-      schemas:
-        temporal: { }
-    defaultdb:
-      defaultUsers: true
-      schemas:
-        defaultdb: { }
+      schemas: {}
   postgresql:
     version: "13"
