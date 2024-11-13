@@ -2,7 +2,7 @@ apiVersion: temporal.io/v1beta1
 kind: TemporalCluster
 metadata:
   name: prod
-  namespace: apps
+  namespace: temporal
 spec:
   version: 1.23.0
   numHistoryShards: 1
@@ -10,29 +10,37 @@ spec:
     defaultStore:
       sql:
         user: temporal
-        pluginName: postgres
+        pluginName: postgres12
         databaseName: temporal
         connectAddr: temporal-pg-cluster.apps.svc.cluster.local:5432
         connectProtocol: tcp
+      skipCreate: true
+      tls:
+        enabled: true
+        enableHostVerification: false
       passwordSecretRef:
-        name: postgres.temporal-pg-cluster.credentials.postgresql.acid.zalan.do
+        name: temporal.temporal-pg-cluster.credentials.postgresql.acid.zalan.do
         key: password
     visibilityStore:
       sql:
-        user: temporal_visibility
-        pluginName: postgres
+        user: temporal
+        pluginName: postgres12
         databaseName: temporal_visibility
         connectAddr: temporal-pg-cluster.apps.svc.cluster.local:5432
         connectProtocol: tcp
+      skipCreate: true
+      tls:
+        enabled: true
+        enableHostVerification: false
       passwordSecretRef:
-        name: postgres.temporal-pg-cluster.credentials.postgresql.acid.zalan.do
+        name: temporal.temporal-pg-cluster.credentials.postgresql.acid.zalan.do
         key: password
-  log:
-    level: debug
+#  log:
+#    level: debug
   ui:
     enabled: true
   admintools:
-    enabled: true
+    enabled: false
   # metrics:
   #   enabled: true
   #   prometheus:
@@ -46,12 +54,12 @@ spec:
   #         - sourceLabels: [__name__]
   #           targetLabel: __name__
   #           replacement: temporal_$1
-  dynamicConfig:
-    pollInterval: 10s
-    values:
-      matching.numTaskqueueReadPartitions:
-        - value: 5
-          constraints: {}
-      matching.numTaskqueueWritePartitions:
-        - value: 5
-          constraints: {}
+#  dynamicConfig:
+#    pollInterval: 10s
+#    values:
+#      matching.numTaskqueueReadPartitions:
+#        - value: 5
+#          constraints: {}
+#      matching.numTaskqueueWritePartitions:
+#        - value: 5
+#          constraints: {}
