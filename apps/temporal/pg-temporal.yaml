@@ -1,0 +1,27 @@
+apiVersion: "acid.zalan.do/v1"
+kind: postgresql
+metadata:
+  name: temporal-pg-cluster
+  namespace: temporal
+spec:
+  teamId: "temporal"
+  volume:
+    storageClass: nfs-client
+    size: 2Gi
+  numberOfInstances: 1
+  users:
+    temporal:  # database owner
+      - superuser
+      - createdb
+    temporal_user: []  # role for application foo
+  databases:
+    temporal: temporal  # dbname: owner
+  preparedDatabases:
+    temporal_visibility:
+      defaultUsers: true
+      schemas: {}
+    temporal:
+      defaultUsers: true
+      schemas: {}
+  postgresql:
+    version: "13"
