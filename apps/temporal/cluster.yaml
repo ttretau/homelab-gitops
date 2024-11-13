@@ -1,0 +1,57 @@
+apiVersion: temporal.io/v1beta1
+kind: TemporalCluster
+metadata:
+  name: prod
+  namespace: apps
+spec:
+  version: 1.23.0
+  numHistoryShards: 1
+  persistence:
+    defaultStore:
+      sql:
+        user: temporal
+        pluginName: postgres
+        databaseName: temporal
+        connectAddr: temporal-pg-cluster.apps.svc.cluster.local:5432
+        connectProtocol: tcp
+      passwordSecretRef:
+        name: postgres.temporal-pg-cluster.credentials.postgresql.acid.zalan.do
+        key: password
+    visibilityStore:
+      sql:
+        user: temporal_visibility
+        pluginName: postgres
+        databaseName: temporal_visibility
+        connectAddr: temporal-pg-cluster.apps.svc.cluster.local:5432
+        connectProtocol: tcp
+      passwordSecretRef:
+        name: postgres.temporal-pg-cluster.credentials.postgresql.acid.zalan.do
+        key: password
+  log:
+    level: debug
+  ui:
+    enabled: true
+  admintools:
+    enabled: true
+  # metrics:
+  #   enabled: true
+  #   prometheus:
+  #     listenPort: 9090
+  #     scrapeConfig:
+  #       serviceMonitor:
+  #         enabled: true
+  #         labels:
+  #           release: test
+  #         metricRelabelings:
+  #         - sourceLabels: [__name__]
+  #           targetLabel: __name__
+  #           replacement: temporal_$1
+  dynamicConfig:
+    pollInterval: 10s
+    values:
+      matching.numTaskqueueReadPartitions:
+        - value: 5
+          constraints: {}
+      matching.numTaskqueueWritePartitions:
+        - value: 5
+          constraints: {}
