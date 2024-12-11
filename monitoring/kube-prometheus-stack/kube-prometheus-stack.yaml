@@ -175,15 +175,15 @@ spec:
       prometheusSpec:
         replicas: 1
         replicaExternalLabelName: "replica"
-        ruleSelector: {}
-        ruleNamespaceSelector: {}
-        ruleSelectorNilUsesHelmValues: false
-        serviceMonitorSelector: {}
-        serviceMonitorNamespaceSelector: {}
-        serviceMonitorSelectorNilUsesHelmValues: false
-        podMonitorSelector: {}
-        podMonitorNamespaceSelector: {}
-        podMonitorSelectorNilUsesHelmValues: false
+#        ruleSelector: {}
+#        ruleNamespaceSelector: {}
+#        ruleSelectorNilUsesHelmValues: false
+#        serviceMonitorSelector: {}
+#        serviceMonitorNamespaceSelector: {}
+#        serviceMonitorSelectorNilUsesHelmValues: false
+#        podMonitorSelector: {}
+#        podMonitorNamespaceSelector: {}
+#        podMonitorSelectorNilUsesHelmValues: false
         retention: 6h
         enableAdminAPI: true
         walCompression: true
