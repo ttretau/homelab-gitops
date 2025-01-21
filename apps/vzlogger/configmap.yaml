@@ -55,7 +55,7 @@ data:
                   "pullseq": "2F3F210D0A",
                   "baudrate": 300,
                   "parity": "7e1",
-                  "read_timeout": 20
+                  "read_timeout": 30
               }
           ]
       }
