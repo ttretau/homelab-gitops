@@ -19,7 +19,7 @@ spec:
   values:
     image:
       repository: nextcloud
-      tag: 31.0.0-apache
+      tag: 31.0.2-apache
     nextcloud:
       host: "nc.tretau.dev"
       existingSecret:
