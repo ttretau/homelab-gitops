@@ -13,12 +13,20 @@ spec:
     - selector:
         dnsZones:
           - "tretau.dev"
-          - "*.tretau.dev
+          - "*.tretau.dev"
+      dns01:
+        cloudflare:
+          zone: "52e7d681183e77668f54779ec921b4da"
+          apiTokenSecretRef:
+            name: cert-manager-secrets
+            key: CLOUDFLARE_TOKEN
+    - selector:
+        dnsZones:
           - "t0n.eu"
           - "*.t0n.eu"
       dns01:
         cloudflare:
-          email: "bam@tretau.net"
+          zone: "0b3134518fb4e142bb53f6ca0ad30ce0"
           apiTokenSecretRef:
             name: cert-manager-secrets
             key: CLOUDFLARE_TOKEN
