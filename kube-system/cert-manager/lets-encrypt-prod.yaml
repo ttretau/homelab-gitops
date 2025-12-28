@@ -10,7 +10,12 @@ spec:
     privateKeySecretRef:
       name: letsencrypt-production
     solvers:
-    - selector: {}
+    - selector:
+        dnsZones:
+          - "tretau.dev"
+          - "*.tretau.dev
+          - "t0n.eu"
+          - "*.t0n.eu"
       dns01:
         cloudflare:
           email: "bam@tretau.net"
