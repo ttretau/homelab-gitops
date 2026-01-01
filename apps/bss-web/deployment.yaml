@@ -1,0 +1,44 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bss-web
+  namespace: apps
+  labels:
+    app: bss-web
+spec:
+  selector:
+    matchLabels:
+      app: bss-web
+  template:
+    metadata:
+#      annotations:
+#        prometheus.io/scrape: "true"
+      labels:
+        app: bss-web
+    spec:
+      containers:
+        - name: bss-web
+          image: ghcr.io/ttretau/blind-song-scanner:fix-play
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+              name: http
+              protocol: TCP
+          env:
+            - name: VITE_SPOTIFY_CLIENT_ID
+              valueFrom:
+                secretKeyRef:
+                  name: apps
+                  key: BSS_WEB_VITE_SPOTIFY_CLIENT_ID
+            - name: SECRET_KEY
+              value: "https://bss.t0n.eu"
+            - name: DEBUG
+              value: "False"
+          resources:
+            limits:
+              cpu: 1000m
+              memory: 512Mi
+            requests:
+              cpu: 100m
+              memory: 256Mi

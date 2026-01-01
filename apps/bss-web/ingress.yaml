@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: bss-web-ingress
+  namespace: apps
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    cert-manager.io/cluster-issuer: "letsencrypt-production"
+spec:
+  tls:
+    - hosts:
+        - bss.t0n.eu
+      secretName: bss-web-tls
+  rules:
+    - host: bss.t0n.eu
+      http:
+        paths:
+          - pathType: ImplementationSpecific
+            backend:
+              service:
+                name: bss-web-service
+                port:
+                  number: 80
