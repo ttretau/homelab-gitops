@@ -16,7 +16,6 @@ spec:
           - "*.tretau.dev"
       dns01:
         cloudflare:
-          zoneID: "0b3134518fb4e142bb53f6ca0ad30ce0"
           apiTokenSecretRef:
             name: cert-manager-secrets
             key: CLOUDFLARE_TOKEN
@@ -26,7 +25,6 @@ spec:
           - "*.t0n.eu"
       dns01:
         cloudflare:
-          zoneID: "52e7d681183e77668f54779ec921b4da"
           apiTokenSecretRef:
             name: cert-manager-secrets
             key: CLOUDFLARE_TOKEN
