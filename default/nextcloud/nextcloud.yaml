@@ -64,6 +64,7 @@ spec:
         nginx.ingress.kubernetes.io/proxy-body-size: "0"
         nginx.ingress.kubernetes.io/hsts: "true"
         kubernetes.io/ingress.class: "nginx"
+        cert-manager.io/cluster-issuer: "letsencrypt-production"
         nginx.ingress.kubernetes.io/server-snippet: |-
           server_tokens off;
           proxy_hide_header X-Powered-By;
@@ -89,12 +90,13 @@ spec:
             deny all;
           }
       hosts:
-      - host: nc.tretau.net
+      - host: nc.tretau.dev
         paths:
         - path: /
           pathType: Prefix
       tls:
-      - hosts:
+      - secretName: nextcloud-tls
+        hosts:
         - "nc.tretau.dev"
     persistence:
       enabled: true
