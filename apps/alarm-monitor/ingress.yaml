@@ -5,11 +5,12 @@ metadata:
   namespace: apps
   annotations:
     kubernetes.io/ingress.class: "nginx"
+    cert-manager.io/cluster-issuer: "letsencrypt-production"
 spec:
   tls:
     - hosts:
         - alarm.t0n.eu
-      secretName: acme-crt-t0n-secret
+      secretName: alarm-manager-tls
   rules:
     - host: alarm.t0n.eu
       http:
