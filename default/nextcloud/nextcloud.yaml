@@ -69,12 +69,6 @@ spec:
           server_tokens off;
           proxy_hide_header X-Powered-By;
 
-          location = /.well-known/carddav {
-            return 301 $scheme://$host/remote.php/dav;
-          }
-          location = /.well-known/caldav {
-            return 301 $scheme://$host/remote.php/dav;
-          }
           location = /robots.txt {
             allow all;
             log_not_found off;
