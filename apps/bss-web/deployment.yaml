@@ -31,7 +31,7 @@ spec:
                 secretKeyRef:
                   name: apps
                   key: BSS_WEB_VITE_SPOTIFY_CLIENT_ID
-            - name: SECRET_KEY
+            - name: VITE_REDIRECT_URL
               value: "https://bss.t0n.eu"
             - name: DEBUG
               value: "False"
