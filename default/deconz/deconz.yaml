@@ -19,7 +19,7 @@ spec:
   values:
     image:
       repository: deconzcommunity/deconz
-      tag: "2.29.1"
+      tag: "2.32.4"
     timezone: "Europe/Berlin"
     ingress:
       main:
