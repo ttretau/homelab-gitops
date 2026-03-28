@@ -22,7 +22,7 @@ spec:
         - name: CODER_ACCESS_URL
           value: "https://coder.kube.home"
         - name: CODER_PG_CONNECTION_URL
-          value: "postgres://coder:$(POSTGRES_PASSWORD)@coder-pg-cluster.apps.svc.cluster.local:5432/coder?sslmode=require"
+          value: "postgres://coder:$(password)@coder-pg-cluster.apps.svc.cluster.local:5432/coder?sslmode=require"
       envFrom:
         - secretRef:
             name: coder.coder-pg-cluster.credentials.postgresql.acid.zalan.do
