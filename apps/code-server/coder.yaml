@@ -20,7 +20,7 @@ spec:
     coder:
       env:
         - name: CODER_ACCESS_URL
-          value: "https://coder.kube.home"
+          value: "http://192.168.128.166"
         - name: CODER_PG_CONNECTION_URL
           value: "postgres://coder:$(password)@coder-pg-cluster.apps.svc.cluster.local:5432/coder?sslmode=require"
       envFrom:
