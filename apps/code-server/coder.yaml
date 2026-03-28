@@ -1,0 +1,31 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: coder
+  namespace: apps
+spec:
+  interval: 5m
+  chart:
+    spec:
+      # renovate: registryUrl=https://helm.coder.com/v2
+      chart: coder
+      version: 2.14.0
+      sourceRef:
+        kind: HelmRepository
+        name: coder-charts
+        namespace: flux-system
+      interval: 5m
+  values:
+    coder:
+      env:
+        - name: CODER_ACCESS_URL
+          value: "https://coder.kube.home"
+        - name: CODER_PG_CONNECTION_URL
+          value: "postgres://coder:$(POSTGRES_PASSWORD)@coder-pg-cluster.apps.svc.cluster.local:5432/coder?sslmode=require"
+      envFrom:
+        - secretRef:
+            name: coder.coder-pg-cluster.credentials.postgresql.acid.zalan.do
+    service:
+      type: LoadBalancer
+      loadBalancerIP: 192.168.128.166

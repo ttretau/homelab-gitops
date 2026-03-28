@@ -1,0 +1,20 @@
+apiVersion: "acid.zalan.do/v1"
+kind: postgresql
+metadata:
+  name: coder-pg-cluster
+  namespace: apps
+spec:
+  teamId: "coder"
+  volume:
+    storageClass: nfs-client
+    size: 2Gi
+  numberOfInstances: 1
+  users:
+    coder:  # database owner
+    - superuser
+    - createdb
+    coder_user: []
+  databases:
+    coder: coder  # dbname: owner
+  postgresql:
+    version: "14"
